@@ -30,7 +30,7 @@
         },
         "warningProperties": {
           "warnAsError": [
-            "NU1605"
+            "nullable"
           ]
         }
       },
