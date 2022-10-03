@@ -1,0 +1,15 @@
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/OOP2
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/OOP2.deps.json
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/OOP2.runtimeconfig.json
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/OOP2.dll
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/ref/OOP2.dll
+/home/fredrikfischer/Documents/Programmering/OOP2/bin/Debug/net6.0/OOP2.pdb
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.csproj.AssemblyReference.cache
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.GeneratedMSBuildEditorConfig.editorconfig
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.AssemblyInfoInputs.cache
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.AssemblyInfo.cs
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.csproj.CoreCompileInputs.cache
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.dll
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/ref/OOP2.dll
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.pdb
+/home/fredrikfischer/Documents/Programmering/OOP2/obj/Debug/net6.0/OOP2.genruntimeconfig.cache
