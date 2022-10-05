@@ -2,19 +2,17 @@ using System;
 
 namespace OOP2{
     class Player
-    {
-        public string name;
-        public IClassType classType;
-        //public IStats stats;
+    { 
+        public Info info;
 
-        public Player(string playerName, IClassType classType){
-            this.classType = classType;
-            this.name = playerName;
-            //this.classtype = new ClassType();
+        public Player(string playerName, Info classInfo){
+            this.info = classInfo;
+            this.info.name = playerName;
+
         }
 
         public void changeName(string name){
-            this.name = name;
+            this.info.name = name;
         }
     }
 }
