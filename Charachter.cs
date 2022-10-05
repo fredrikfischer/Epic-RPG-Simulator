@@ -1,9 +1,9 @@
 using System;
 
 namespace OOP2{
-    public abstract class Info{
-        public string name;
-        public string classTypeName { get; set; }
+    public abstract class Charachter{
+        public string? name { get; set; } 
+        public string? classTypeName { get; set; } 
         public double attackDamage{ get; set; }
         public double defence { get; set; }
         public double critChance {get; set;}

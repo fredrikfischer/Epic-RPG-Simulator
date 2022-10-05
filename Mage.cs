@@ -1,7 +1,7 @@
 using System;
 
 namespace OOP2 {
-    class Mage : Info
+    class Mage : Charachter
     { 
 
        public Mage(){

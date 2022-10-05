@@ -3,9 +3,9 @@ using System;
 namespace OOP2{
     class Player
     { 
-        public Info info;
+        public Charachter info;
 
-        public Player(string playerName, Info classInfo){
+        public Player(string playerName, Charachter classInfo){
             this.info = classInfo;
             this.info.name = playerName;
 

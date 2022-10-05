@@ -1,7 +1,7 @@
 using System;
 
 namespace OOP2 {
-    class Warrior : Info
+    class Warrior : Charachter
     {   
 
        public Warrior(){

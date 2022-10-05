@@ -7,15 +7,11 @@ namespace OOP2{
         static void Main(string[] args){
 
         string playerName = "P1";
-        //string p2_name = "P2";
-
-        //Player player_1 = new Player(p1_name);
-        // Player player_2 = new Player(p2_name);
 
         Console.WriteLine("Choose your class! \n1. Warrior \n2. Mage");
-        string userInput = Console.ReadLine();
+        var userInput = Console.ReadLine();
 
-            Info playerType;
+            Charachter playerType;
 
             var result = userInput switch{
                 "1" => playerType = new Warrior(),
