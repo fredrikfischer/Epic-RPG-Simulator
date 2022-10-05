@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/fredrikfischer/.nuget/packages/": {}
+    "C:\\Users\\Felicia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
+      "projectUniqueName": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
       "projectName": "OOP2",
-      "projectPath": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
-      "packagesPath": "/home/fredrikfischer/.nuget/packages/",
-      "outputPath": "/home/fredrikfischer/Documents/Programmering/OOP2/obj/",
+      "projectPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+      "packagesPath": "C:\\Users\\Felicia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/fredrikfischer/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Felicia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -36,7 +38,7 @@
       },
       "warningProperties": {
         "warnAsError": [
-          "nullable"
+          "NU1605"
         ]
       }
     },
@@ -49,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.109/sdk/6.0.109/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
