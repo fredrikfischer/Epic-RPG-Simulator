@@ -1,36 +1,16 @@
 using System;
 
 namespace OOP2 {
-    class Warrior : IClassType{   
-
-       public string classTypeName { get; set; }
-       public double strength { get; set; }
-       public double intelligence { get; set; }
-       public double agility { get; set; }
-
-       public double hp { get; set; }
-       
+    class Warrior : ClassType
+    {   
 
        public Warrior(){
-            classTypeName = "Warrior";
-
-            strength = 20;
-            intelligence = 5;
-            agility = 10;
-
-            hp = 120;
+            name = "Warrior";
+            description = "Warriors are cool";
+            //classTypeName = "Warrior";
+            //classTypeInfo = "A warrior is a brave and heroic character. It is a meelee character with excellent fighting capabillities.";
+            //defence += 20;
+            //hp += 30;
        }
-
-        public double Attack()
-        {
-            double dmg = (strength * 2) + (intelligence / 2) + agility;
-            return dmg;
-        }
-
-        public double Attack(int item)
-        {
-            double dmg = item + ((strength * 2) + (intelligence / 2) + agility);
-            return dmg;
-        }
     }
 }

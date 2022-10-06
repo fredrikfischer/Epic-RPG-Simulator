@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+      "projectUniqueName": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj",
       "projectName": "OOP2",
-      "projectPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+      "projectPath": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj",
       "packagesPath": "C:\\Users\\Felicia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\obj\\",
+      "outputPath": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Felicia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,5 +64,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

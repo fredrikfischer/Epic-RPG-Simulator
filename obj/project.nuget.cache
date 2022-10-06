@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "E0W0tgan3GP/TuPmtyw3Ut9K3KieUxmX8bxdpLb+Mj60NavDy3ApJ6/mNB+nRIx+UvzUeRgRAnUAXqYkwGShew==",
+  "dgSpecHash": "GnhinDVnEXZWJBg0qchofK/b0JkM++bjCniPyF2SMbq4CU5OWa/12zz5TnTLhb900Nzk1Oz5XFp0rNTBHuayow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+  "projectFilePath": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

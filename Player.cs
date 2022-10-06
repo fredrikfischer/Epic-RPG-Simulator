@@ -1,20 +1,21 @@
 using System;
+using System.Reflection.PortableExecutable;
 
 namespace OOP2{
-    class Player
+    class Player : Character
     {
-        public string name;
-        public IClassType classType;
-        //public IStats stats;
 
-        public Player(string playerName, IClassType classType){
+
+        public Player(){
+            
+
+        }
+
+        public Player(string playerName, ClassType classType, RaceType raceType){
             this.classType = classType;
+            this.raceType = raceType;
             this.name = playerName;
-            //this.classtype = new ClassType();
         }
-
-        public void changeName(string name){
-            this.name = name;
-        }
+        
     }
 }
