@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj": {}
+    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj": {
+    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj",
+        "projectUniqueName": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
         "projectName": "OOP2",
-        "projectPath": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\OOP2.csproj",
+        "projectPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
         "packagesPath": "C:\\Users\\Felicia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felicia\\Source\\Repos\\OOP2_projekt\\obj\\",
+        "outputPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Felicia\\AppData\\Roaming\\NuGet\\NuGet.Config",
