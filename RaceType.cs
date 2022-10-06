@@ -2,10 +2,16 @@ using System;
 
 namespace OOP2
 {
-    public class RaceType
+    public abstract class RaceType 
     {
         public string name;
         public string description;
+        public double attackDamage;
+        public double defence;
+        public double critChance;
+        public double critDamage;
+        public double hp;
+
         public RaceType()
         {
             name = "no name";

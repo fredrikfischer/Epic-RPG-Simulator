@@ -19,6 +19,12 @@ namespace OOP2{
                 _ => playerClass = new Warrior(),
             };
             
+            Console.Clear();
+            Console.WriteLine($"You chose the {playerClass.name} class, that's a good choice! Prepare for an epic adventure!!!");   
+            Console.WriteLine("\n\nPress any key to continue...");
+            Console.ReadLine();
+            Console.Clear();
+            
             Console.WriteLine("Choose your race! \n1. Elf\n2. Orc");
             var userRace = Console.ReadLine();
             RaceType playerRace;
@@ -33,18 +39,18 @@ namespace OOP2{
             
             Console.Clear();
             //Console.WriteLine($"Name: {player1.info.name}, Stringth:{player1.info.strength}, Int: {player1.info.intelligence}, agg: {player1.info.agility}, hp: {player1.info.hp}");
-            Console.WriteLine($"You chose the {player1.classType.name} class, that's a good choice! Prepare for an epic adventure!!!");   
+            Console.WriteLine($"You chose the {playerRace.name} race! Prepare for an epic adventure!!");  
             Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine($"You chose the {player1.raceType.name} race! Prepare for an epic adventure!!");  
-            Console.WriteLine("\n\nPress any key to continue...");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine($"Attack damage: {player1.attackDamage}");
-            Console.WriteLine($"\ndefence: {player1.defence}");
-            Console.WriteLine($"\nCritical hit chance: {player1.critChance}");
-            Console.WriteLine($"\nHealth power: {player1.hp}");
+            Console.WriteLine($"Name: {player1.name}");
+            Console.WriteLine($"Class: {player1.classType.name}");
+            Console.WriteLine($"Race: {player1.raceType.name}");
+            Console.WriteLine($"\nAttack damage: {player1.attackDamage}");
+            Console.WriteLine($"defence: {player1.defence}");
+            Console.WriteLine($"Critical hit chance: {player1.critChance}");
+            Console.WriteLine($"Critical hit damage: {player1.critDamage}");
+            Console.WriteLine($"Health power: {player1.hp}");
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadLine();
             Console.WriteLine("Press (1) to attack");

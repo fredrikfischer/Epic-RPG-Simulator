@@ -6,11 +6,9 @@ namespace OOP2 {
 
        public Warrior(){
             name = "Warrior";
-            description = "Warriors are cool";
-            //classTypeName = "Warrior";
-            //classTypeInfo = "A warrior is a brave and heroic character. It is a meelee character with excellent fighting capabillities.";
-            //defence += 20;
-            //hp += 30;
+            description = "A warrior is a brave and heroic character. It is a meelee character with excellent fighting capabillities.";
+            defence = 20;
+            hp = 30;
        }
     }
 }
