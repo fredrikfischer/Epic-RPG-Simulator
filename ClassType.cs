@@ -10,7 +10,7 @@ namespace OOP2
         public double defence;
         public double critChance;
         public double critDamage;
-        public double hp;
+        public double maxHp;
         
         public ClassType()
         {

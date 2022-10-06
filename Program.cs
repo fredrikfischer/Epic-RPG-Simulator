@@ -48,9 +48,9 @@ namespace OOP2{
             Console.WriteLine($"Race: {player1.raceType.name}");
             Console.WriteLine($"\nAttack damage: {player1.attackDamage}");
             Console.WriteLine($"defence: {player1.defence}");
-            Console.WriteLine($"Critical hit chance: {player1.critChance}");
-            Console.WriteLine($"Critical hit damage: {player1.critDamage}");
-            Console.WriteLine($"Health power: {player1.hp}");
+            Console.WriteLine($"Critical hit chance: {player1.critChance * 100}%");
+            Console.WriteLine($"Critical hit damage: {player1.critDamage * 100}%");
+            Console.WriteLine($"Health power: {player1.maxHp}");
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadLine();
             Console.WriteLine("Press (1) to attack");

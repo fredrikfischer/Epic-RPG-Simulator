@@ -8,7 +8,7 @@ namespace OOP2 {
             name = "Warrior";
             description = "A warrior is a brave and heroic character. It is a meelee character with excellent fighting capabillities.";
             defence = 20;
-            hp = 30;
+            maxHp = 30;
        }
     }
 }
