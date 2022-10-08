@@ -2,7 +2,7 @@ using System;
 
 namespace OOP2
 {
-    public abstract class RaceType 
+    public abstract class RaceType
     {
         public string name;
         public string description;

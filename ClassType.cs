@@ -2,15 +2,15 @@ using System;
 
 namespace OOP2
 {
-    public class ClassType
+    public class ClassType 
     {
         public string? name;
         public string? description;
-        public double? attackDamage;
-        public double? defence;
-        public double? critChance;
-        public double? critDamage;
-        public double? maxHp;
+        public Attribute? attackDamage;
+        public Attribute? defence;
+        public Attribute? critChance;
+        public Attribute? critDamage;
+        public Attribute? maxHp;
         
         public ClassType()
         {

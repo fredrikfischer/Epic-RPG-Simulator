@@ -2,7 +2,7 @@ using System;
 using System.Reflection.PortableExecutable;
 
 namespace OOP2{
-    public class Player
+    public class Player 
     {
         public string? name { get; set; }
         public ClassType classType { get; set; }
