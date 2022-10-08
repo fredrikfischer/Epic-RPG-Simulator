@@ -16,6 +16,13 @@ namespace OOP2{
             this.raceType = raceType; 
             this.attributes = attributes;
 
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Class: {classType.name}");
+            Console.WriteLine($"Race: {raceType.name}");
+            Console.WriteLine("\n\nPress any key to continue...");
+            Console.ReadLine();
+            Console.Clear();
+
         }
     }
 }

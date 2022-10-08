@@ -5,14 +5,14 @@ namespace OOP2
     {
 
 
-        public Match(Monster monster, Character character)
+        public Match(Player player, Monster monster)
         {
 
             
 
         }
 
-        public void Duel(Monster monster, Character character)
+        public void Duel(Player player, Monster monster)
         {
 
             

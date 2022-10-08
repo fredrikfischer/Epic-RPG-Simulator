@@ -7,6 +7,7 @@ namespace OOP2
 		public Monster()
 		{
 
+			
 		}
 	}
 }

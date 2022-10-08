@@ -17,7 +17,7 @@ namespace OOP2 {
             this.baseValue = baseValue;
             this.bonusRaw = bonusRaw;
             this.bonusMultiplyer = 1 + bonusMultiplyer;
-            Console.WriteLine("double");
+            //Console.WriteLine(/*"double"*/);
         }
 
         public Attribute(double baseValue, double bonusMultiplyer){
@@ -25,7 +25,7 @@ namespace OOP2 {
             //List<double> bonusMultiplyer = new List<double>();
             this.baseValue = baseValue;
             this.bonusMultiplyer = 1 + bonusMultiplyer;
-            Console.WriteLine("double");
+            //Console.WriteLine(/*"double"*/);
         }
 
 
