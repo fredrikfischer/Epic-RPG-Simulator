@@ -13,6 +13,7 @@ namespace OOP2
 			this.type = type;
 			this.name = name;
 			this.dmg = dmg;
+			
 		}
 	}
 }
