@@ -8,7 +8,6 @@ namespace OOP2{
         public RaceType? raceType { get; set; }
         public Attributes? attributes {get; set; }
 
-        
         public double attackDamage { get; set; }
         public double defence { get; set;}
         public double critChance { get; set; }

@@ -47,16 +47,16 @@ namespace OOP2{
             Console.WriteLine($"Name: {player1.name}");
             Console.WriteLine($"Class: {player1.classType.name}");
             Console.WriteLine($"Race: {player1.raceType.name}");
-            Console.WriteLine($"\nAttack damage: {player1.attributes.attackDamage.value}");
-            Console.WriteLine($"defence: {player1.attributes.defence.value}");
-            Console.WriteLine($"Critical hit chance: {player1.attributes.critChance.value * 100}%");
-            Console.WriteLine($"Critical hit damage: {player1.attributes.critDamage.value * 100}%");
-            Console.WriteLine($"Health power: {player1.attributes.maxHp.value}");
+            Console.WriteLine($"\nAttack damage: {player1.attackDamage.value}");
+            Console.WriteLine($"defence: {player1.defence.value}");
+            Console.WriteLine($"Critical hit chance: {player1.critChance.value * 100}%");
+            Console.WriteLine($"Critical hit damage: {player1.critDamage.value * 100}%");
+            Console.WriteLine($"Health power: {player1.maxHp.value}");
             Console.WriteLine("\nPress any key to continue...");
             Console.ReadLine();
             Console.WriteLine("Press (1) to attack");
             Console.ReadLine();
-            //Console.WriteLine($"You attacked! You did {player1.Attack()} damage!");
+            //Console.WriteLine($"You attacked! You did {player1.Attack()} damage!");*/
             Console.ReadLine();
         }
     }

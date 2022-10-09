@@ -2,21 +2,18 @@ using System;
 
 namespace OOP2
 {
-    public class ClassType 
+    abstract public class ClassType 
     {
         public string? name;
         public string? description;
-        public Attribute? attackDamage;
-        public Attribute? defence;
-        public Attribute? critChance;
-        public Attribute? critDamage;
-        public Attribute? maxHp;
+        public AttributeBonus? attackDamage;
+        public AttributeBonus? defence;
+        public AttributeBonus? critChance;
+        public AttributeBonus? critDamage;
+        public AttributeBonus? maxHp;
+        public AttributeBonus? currentHp;
         
-        public ClassType()
-        {
-            name = "no name";
-            description = "no description";
 
-        }
+
     }
 }
