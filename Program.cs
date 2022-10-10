@@ -29,7 +29,7 @@ namespace OOP2
 
             ChooseAction();
 
-            
+
 
             /*
             Console.WriteLine($"\nAttack damage: {player1.attributes.attackDamage.value}");
@@ -64,6 +64,7 @@ namespace OOP2
                 "2" => playerClass = new Mage(),
                 _ => playerClass = new Warrior(),
             };
+
 
             Console.Clear();
             Console.WriteLine($"You chose the {playerClass.name} class, that's a good choice! Prepare for an epic adventure!!!");
