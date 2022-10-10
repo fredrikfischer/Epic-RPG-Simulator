@@ -8,13 +8,13 @@ namespace OOP2
         {
             name = "Elf";
             description = "Elfs are cool";
-            //string raceTypeName = "Elf";
-            //string raceTypeInfo = "An Elf is a mystical creature from the roots of the old world! They are tall and fair, always with pure intentions! Elfs hold great powers and have specially good att offensive damage.";
-            //double defence = 10;
-            //double hp *= 0.9;
-            //double attackDamage *= 1.1;
-            //double critChance *= 1.1;
-            //double critdamage *= 1.1;
+
+            attackDamage = new AttributeBonus(10);
+            //defence = new AttributeBonus();
+            critChance = new AttributeBonus(0.05);
+            critDamage = new AttributeBonus(0.05);
+            //maxHp = new AttributeBonus();
+            currentHp = new AttributeBonus();
         }
     }
 }

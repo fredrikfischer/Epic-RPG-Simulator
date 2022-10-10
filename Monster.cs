@@ -2,11 +2,17 @@ using System;
 
 namespace OOP2
 {
-	public class Monster 
+	class Monster 
 	{
-		public Monster()
-		{
 
-		}
+		/* Level level;
+
+
+
+		public Monster(Level level)
+		{
+			this.level = level;
+			
+		}*/
 	}
 }
