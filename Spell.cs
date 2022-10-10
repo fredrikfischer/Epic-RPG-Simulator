@@ -14,5 +14,6 @@ namespace OOP2
 			this.name = name;
 			this.dmg = dmg;
 		}
+		
 	}
 }

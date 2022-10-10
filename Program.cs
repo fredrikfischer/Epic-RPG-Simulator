@@ -10,6 +10,7 @@ namespace OOP2
         {
 
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
+            Console.ReadLine(); Console.Clear();
             Menu();
 
         }
@@ -25,9 +26,9 @@ namespace OOP2
 
             BonusType playerRace = ChooseRace();
 
-            Player player1 = new Player(playerName, playerClass, playerRace/*, new Level()*/);
+            Player player = new Player(playerName, playerClass, playerRace/*, new Level()*/);
 
-            ChooseAction(player1);
+            ChooseAction(player);
 
 
 
@@ -48,13 +49,13 @@ namespace OOP2
 
         }
 
-        private static void displayStats(Player player1)
+        private static void displayStats(Player player)
         {
-            Console.WriteLine($"\nAttack damage: {player1.attackDamage.value}");
-            Console.WriteLine($"defence: {player1.defence.value}");
-            Console.WriteLine($"Critical hit chance: {player1.critChance.value * 100}%");
-            Console.WriteLine($"Critical hit damage: {player1.critDamage.value * 100}%");
-            Console.WriteLine($"Maximun health power: {player1.maxHp.value}");
+            Console.WriteLine($"\nAttack damage: {player.attackDamage.value}");
+            Console.WriteLine($"defence: {player.defence.value}");
+            Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
+            Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
+            Console.WriteLine($"Maximun health power: {player.maxHp.value}");
         }
 
         private static string ChoosePlayerName()
@@ -106,22 +107,23 @@ namespace OOP2
             return playerRace;
         }
 
-        private static void ChooseAction(Player player1)
+        private static void ChooseAction(Player player)
         {
             Console.WriteLine("Choose action");
-            Console.WriteLine("1. Go to item shop");
-            Console.WriteLine("2. Fight next opponent");
+            Console.WriteLine("1. Fight next opponent");
+            Console.WriteLine("2. Go to item shop");
             Console.WriteLine("3. See statistics");
-            displayStats(player1);
+            displayStats(player);
             switch (Console.ReadLine())
             {
                 case "1":
                     Console.Clear();
-                    Console.WriteLine("item shop");
+                    Match match = new Match(player);
+                    
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("fight");
+                    Console.WriteLine("item shop");
                     break;
                 case "3":
                     Console.Clear();

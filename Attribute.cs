@@ -6,8 +6,19 @@ namespace OOP2 {
     { 
         AttributeBonus attributeBonus;
         double baseValue;
-        public double value { get => CalculateValue(); set => value = this.baseValue; } 
+        public double value { get => CalculateValue(); set => this.value = value; } 
+        
 
+        // For monster
+        public Attribute(int baseValue){   
+            attributeBonus = new AttributeBonus();
+            this.baseValue = baseValue;
+        }
+
+        public Attribute(double baseValue){   
+            attributeBonus = new AttributeBonus();
+            this.baseValue = baseValue;
+        }
 
         public Attribute(int baseValue, AttributeBonus classBonus, AttributeBonus raceBonus){
             //adds raw bonus from class and race
@@ -26,7 +37,6 @@ namespace OOP2 {
 
         public double CalculateValue(){
             return (baseValue + attributeBonus.bonusRaw) * 1 + attributeBonus.bonusMultiplyer;
-        }
-        
+        }    
     }
 }
