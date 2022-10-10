@@ -2,7 +2,7 @@ using System;
 
 namespace OOP2
 {
-    abstract public class ClassType 
+    abstract public class BonusType 
     {
         public string name;
         public string description;
@@ -13,9 +13,9 @@ namespace OOP2
         public AttributeBonus maxHp;
         public AttributeBonus currentHp;
 
-        public ClassType() {
-            name = "No class";
-            description = "No class description";
+        public BonusType() {
+            name = "N/A";
+            description = "N/A";
             attackDamage = new AttributeBonus();
             defence = new AttributeBonus();
             critChance = new AttributeBonus();

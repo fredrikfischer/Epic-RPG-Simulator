@@ -2,7 +2,7 @@ using System;
 
 namespace OOP2
 {
-    class Elf : RaceType
+    class Elf : BonusType
     {
         public Elf()
         {

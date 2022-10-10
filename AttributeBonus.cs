@@ -5,8 +5,8 @@ namespace OOP2 {
     public class AttributeBonus
     { 
 
-        public int bonusRaw;
-        public double bonusMultiplyer;
+        public int bonusRaw {get; private set; }
+        public double bonusMultiplyer {get; private set; }
         
         public AttributeBonus(){
             bonusRaw = 0;
@@ -27,8 +27,8 @@ namespace OOP2 {
             this.bonusRaw = 0;
         }
 
-        public void recieveUpdate(){
-            Console.WriteLine("bonus is updated");
+        public void recieveUpdate(int newBonusRaw){
+            bonusRaw += newBonusRaw;
         }
         
     }

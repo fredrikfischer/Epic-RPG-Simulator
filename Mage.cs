@@ -1,7 +1,7 @@
 using System;
 
 namespace OOP2 {
-    class Mage : ClassType
+    class Mage : BonusType
     { 
         
         public Mage(){
