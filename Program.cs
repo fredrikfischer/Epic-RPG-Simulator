@@ -25,7 +25,7 @@ namespace OOP2
 
             RaceType playerRace = ChooseRace();
 
-            Player player1 = new Player(playerName, playerClass, playerRace, new Level());
+            Player player1 = new Player(playerName, playerClass, playerRace/*, new Level()*/);
 
             ChooseAction();
 
