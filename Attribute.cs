@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace OOP2 {
     public class Attribute
     { 
-        AttributeBonus attributeBonus;
+        public AttributeBonus attributeBonus;
         double baseValue;
         double currentValue;
         public double value { get { return currentValue; } set { this.currentValue = value; }}

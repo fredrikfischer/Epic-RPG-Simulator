@@ -21,7 +21,7 @@ namespace OOP2
             //this.classType = classType;
             //this.raceType = raceType; 
 
-            attackDamage = new Attribute(30);
+            attackDamage = new Attribute(80);
             defence = new Attribute(20);
             critChance = new Attribute(0.1);
             critDamage = new Attribute(0.1);
