@@ -13,7 +13,7 @@ namespace OOP2{
         public Attribute critChance { get; set; }
         public Attribute critDamage { get; set; } 
         public Attribute maxHp { get; set; } 
-        public double currentHp { get; set; } 
+        public Attribute currentHp { get; set; } 
 
         public Player(string playerName, BonusType classType, BonusType raceType){
             name = playerName;
@@ -25,7 +25,7 @@ namespace OOP2{
             critChance = new Attribute(0.1, classType.critChance, raceType.critChance);
             critDamage = new Attribute(0.1, classType.critDamage, raceType.critDamage);
             maxHp = new Attribute(100, classType.maxHp, raceType.maxHp);
-            currentHp = maxHp.value;
+            currentHp = new Attribute(100, classType.maxHp, raceType.maxHp);
         }
 
         void updateAttributeBonus(BonusType bonusType){

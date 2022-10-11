@@ -9,7 +9,7 @@ namespace OOP2 {
         Attribute critChance { get; set; }
         Attribute critDamage { get; set; } 
         Attribute maxHp { get; set; } 
-        double currentHp { get; set; } 
+        Attribute currentHp { get; set; } 
         //maybe public int level { get; set;}
         
 
