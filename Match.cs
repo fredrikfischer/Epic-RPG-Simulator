@@ -25,14 +25,14 @@ namespace OOP2
             Console.Clear();
             switch(input)
             {
-                case "1": Attack(player, enemy);
+                case "1": useAbility(player, enemy);
                     break;
                 default: Round(player, enemy);
                     break;
             }
             Console.ReadLine();
             Console.Clear();
-            Attack(enemy, player);
+            useAbility(enemy, player);
             Console.ReadLine();
             Console.Clear();
             Round(player, enemy);
@@ -40,7 +40,7 @@ namespace OOP2
             
         }
 
-        private void Attack(Player player, Enemy enemy){
+        private void useAbility(Player player, Enemy enemy){
             //Calculates crit
             Random rnd = new Random();
             double totalDamage;
@@ -62,7 +62,7 @@ namespace OOP2
             Console.WriteLine($"You attack and hurt you with {totalDamage} damage");
         }
 
-        private void Attack(Enemy enemy, Player player){
+        private void useAbility(Enemy enemy, Player player){
             //Calculates crit
             Random rnd = new Random();
             double totalDamage;

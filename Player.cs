@@ -15,6 +15,8 @@ namespace OOP2{
         public Attribute maxHp { get; set; } 
         public Attribute currentHp { get; set; } 
 
+        public Abilities? abilities { get; set; } 
+
         public Player(string playerName, BonusType classType, BonusType raceType){
             name = playerName;
             this.classType = classType;
@@ -26,6 +28,8 @@ namespace OOP2{
             critDamage = new Attribute(0.1, classType.critDamage, raceType.critDamage);
             maxHp = new Attribute(100, classType.maxHp, raceType.maxHp);
             currentHp = new Attribute(100, classType.maxHp, raceType.maxHp);
+
+            Abilities abilities = new Abilities();
         }
 
         void updateAttributeBonus(BonusType bonusType){
