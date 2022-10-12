@@ -28,12 +28,19 @@ namespace OOP2 {
             if(0 < attributeBonusLists.bonusRawList.Sum())
             {
                 this.attributeBonus.bonusRawList.Add(attributeBonusLists.bonusRawList.Sum());
+                AddCurrentValue(attributeBonusLists.bonusRawList.Sum());
             }
 
             if(0 < attributeBonusLists.bonusMultiplyerList.Sum())
             {
                 this.attributeBonus.bonusMultiplyerList.Add(attributeBonusLists.bonusMultiplyerList.Sum());
+                AddCurrentValue(attributeBonusLists.bonusRawList.Sum());
             }   
+        }
+
+        public void AddCurrentValue(double incomingDamage)
+        {
+            currentValue += incomingDamage;
         }
 
         public void reduceCurrentValue(double incomingDamage)

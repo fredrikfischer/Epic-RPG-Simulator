@@ -16,7 +16,7 @@ Round(player, enemy);
 
 private void Round(Player player, Enemy enemy)
 {
-Console.WriteLine($"Your hp: {player.healthPower.currentValue}\n{enemy.name} hp: {enemy.healthPower.currentValue}\n");
+Console.WriteLine($"Your hp: {player.healthPower.currentValue}/{player.healthPower.value}\n{enemy.name} hp: {enemy.healthPower.currentValue}/{enemy.healthPower.value}\n");
 
 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
 string? input = Console.ReadLine();
