@@ -4,11 +4,9 @@ using System.Collections.Generic;
 namespace OOP2 {
     public class Attribute
     { 
-        public AttributeBonus attributeBonus;
+        AttributeBonus attributeBonus;
         double baseValue;
-        double currentValue;
-        public double value { get { return currentValue; } set { this.currentValue = value; }}
-
+        public double value { get => CalculateValue(); set => this.value = value; } 
         
 
         // For monster
@@ -23,7 +21,7 @@ namespace OOP2 {
             this.baseValue = baseValue;
             currentValue = (baseValue + attributeBonus.bonusRaw) * 1 + attributeBonus.bonusMultiplyer;
         }
-        //For player
+
         public Attribute(int baseValue, AttributeBonus classBonus, AttributeBonus raceBonus){
             //adds raw bonus from class and race
             int totalBonusRaw = classBonus.bonusRaw + raceBonus.bonusRaw;
@@ -41,6 +39,8 @@ namespace OOP2 {
             currentValue = (baseValue + attributeBonus.bonusRaw) * 1 + attributeBonus.bonusMultiplyer;
         }
 
-        
+        public double CalculateValue(){
+            return (baseValue + attributeBonus.bonusRaw) * 1 + attributeBonus.bonusMultiplyer;
+        }    
     }
 }

@@ -1,35 +1,39 @@
 using System;
 using System.Collections.Generic;
 
-namespace OOP2 {
+namespace OOP2
+{
     public class AttributeBonus
-    { 
+    {
+        public List<int> bonusRawList { get; private set; }
+        public List<double> bonusMultiplyerList { get; private set; }
 
-        public int bonusRaw {get; private set; }
-        public double bonusMultiplyer {get; private set; }
-        
-        public AttributeBonus(){
-            bonusRaw = 0;
-            bonusMultiplyer = 0;
+
+        public AttributeBonus()
+        {
+            bonusRawList = new List<int>();
+            bonusMultiplyerList = new List<double>();
 
         }
 
-        public AttributeBonus(int bonusRaw){
 
-            this.bonusRaw = bonusRaw;
-            bonusMultiplyer = 0;
+        public void Add(int bonusRaw)
+        {
+            this.bonusRawList.Add(bonusRaw);
+
         }
 
-        public AttributeBonus(double bonusMultiplyer){
+        public void Add(double bonusMultiplyer)
+        {
+            this.bonusMultiplyerList.Add(bonusMultiplyer);
 
-            
-            this.bonusMultiplyer = bonusMultiplyer;
-            this.bonusRaw = 0;
         }
 
-        public void recieveUpdate(int newBonusRaw){
-            bonusRaw += newBonusRaw;
+
+        public void recieveUpdate(int newBonusRaw)
+        {
+            //bonusRaw += newBonusRaw;
         }
-        
+
     }
 }

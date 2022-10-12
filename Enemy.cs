@@ -13,7 +13,7 @@ namespace OOP2
         public Attribute critChance { get; private set; }
         public Attribute critDamage { get; private set; } 
         public Attribute maxHp { get; private set; } 
-        public Attribute currentHp { get; set; } 
+        public double currentHp { get; set; } 
 
 		public Enemy(){
 			name = "Spok";
@@ -26,7 +26,7 @@ namespace OOP2
             critChance = new Attribute(0.1);
             critDamage = new Attribute(0.1);
             maxHp = new Attribute(100);
-            currentHp = new Attribute(100);
+            currentHp = maxHp.value;
 
 		}
 
