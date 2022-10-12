@@ -9,12 +9,12 @@ namespace OOP2
             name = "Elf";
             description = "Elfs are cool";
 
-            attackDamage = new AttributeBonus(10);
+            attackDamage.Add(10);
             //defence = new AttributeBonus();
-            critChance = new AttributeBonus(0.05);
-            critDamage = new AttributeBonus(0.05);
+            critChance.Add(0.5);
+            critDamage.Add(0.5);
             //maxHp = new AttributeBonus();
-            currentHp = new AttributeBonus();
+            //currentHp = new AttributeBonus();
         }
     }
 }

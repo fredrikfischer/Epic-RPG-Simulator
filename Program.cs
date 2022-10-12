@@ -11,9 +11,7 @@ namespace OOP2
 
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
             Console.ReadLine(); Console.Clear();
-            Menu();
-
-        }
+            Menu();        }
 
 
         private static void Menu()
@@ -55,7 +53,7 @@ namespace OOP2
             Console.WriteLine($"defence: {player.defence.value}");
             Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
             Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
-            Console.WriteLine($"Maximun health power: {player.maxHp.value}");
+            Console.WriteLine($"Maximun health points: {player.maxHp.value}");
         }
 
         private static string ChoosePlayerName()
