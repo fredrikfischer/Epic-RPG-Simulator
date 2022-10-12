@@ -11,8 +11,8 @@ namespace OOP2 {
             defence.Add(20);
             //critChance = new AttributeBonus();
             //critDamage = new AttributeBonus();
-            maxHp.Add(30);
-            currentHp.Add(30);
+            healthPower.Add(30);
+
        }
     }
 }

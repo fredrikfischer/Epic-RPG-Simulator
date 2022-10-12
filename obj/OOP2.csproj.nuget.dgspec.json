@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {}
+    "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {
+    "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+        "projectUniqueName": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
         "projectName": "OOP2",
-        "projectPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
-        "packagesPath": "C:\\Users\\Felicia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\obj\\",
+        "projectPath": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
+        "packagesPath": "/home/fredrikfischer/.nuget/packages/",
+        "outputPath": "/home/fredrikfischer/Documents/Programmering/OOP2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Felicia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/fredrikfischer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,8 +38,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -50,7 +47,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
         }
       }
     }

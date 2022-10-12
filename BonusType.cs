@@ -10,8 +10,7 @@ namespace OOP2
         public AttributeBonus defence;
         public AttributeBonus critChance;
         public AttributeBonus critDamage;
-        public AttributeBonus maxHp;
-        public AttributeBonus currentHp;
+        public AttributeBonus healthPower;
 
         public BonusType() {
             name = "N/A";
@@ -20,8 +19,7 @@ namespace OOP2
             defence = new AttributeBonus();
             critChance = new AttributeBonus();
             critDamage = new AttributeBonus();
-            maxHp = new AttributeBonus();
-            currentHp = new AttributeBonus();
+            healthPower = new AttributeBonus();
         }
         
 
