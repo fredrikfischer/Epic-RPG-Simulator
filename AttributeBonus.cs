@@ -13,9 +13,19 @@ namespace OOP2
         {
             bonusRawList = new List<int>();
             bonusMultiplyerList = new List<double>();
-
         }
 
+        public AttributeBonus(int input)
+        {
+            bonusRawList = new List<int>(){input};
+            bonusMultiplyerList = new List<double>();
+        }
+
+        public AttributeBonus(double input)
+        {
+            bonusRawList = new List<int>();
+            bonusMultiplyerList = new List<double>() {input};
+        }
 
         public void Add(int bonusRaw)
         {

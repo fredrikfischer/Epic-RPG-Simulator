@@ -12,7 +12,7 @@ namespace OOP2
         public Attribute defence { get; private set;}
         public Attribute critChance { get; private set; }
         public Attribute critDamage { get; private set; } 
-        public Attribute healthPower { get; private set; } 
+        public Attribute healthPoints { get; private set; } 
 
 
 		public Enemy(){
@@ -25,7 +25,7 @@ namespace OOP2
             defence = new Attribute(20);
             critChance = new Attribute(0.1);
             critDamage = new Attribute(0.1);
-            healthPower = new Attribute(100);
+            healthPoints = new Attribute(100);
 
 
 		}

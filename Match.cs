@@ -16,7 +16,7 @@ Round(player, enemy);
 
 private void Round(Player player, Enemy enemy)
 {
-Console.WriteLine($"Your hp: {player.healthPower.currentValue}/{player.healthPower.value}\n{enemy.name} hp: {enemy.healthPower.currentValue}/{enemy.healthPower.value}\n");
+Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
 
 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
 string? input = Console.ReadLine();
@@ -51,7 +51,7 @@ totalDamage = player.attackDamage.value - enemy.defence.value;
 
 if(totalDamage >= 0)
 {
-enemy.healthPower.reduceCurrentValue(totalDamage);
+enemy.healthPoints.reduceCurrentValue(totalDamage);
 }else{
 totalDamage = 0;
 }
@@ -73,7 +73,7 @@ totalDamage = enemy.attackDamage.value - player.defence.value;
 
 if(totalDamage >= 0)
 {
-player.healthPower.reduceCurrentValue(totalDamage);
+player.healthPoints.reduceCurrentValue(totalDamage);
 }else{
 totalDamage = 0;
 }

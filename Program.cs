@@ -20,9 +20,9 @@ namespace OOP2
             string playerName = ChoosePlayerName();
 
 
-            BonusType playerClass = ChooseClass();
+            IBonusType playerClass = ChooseClass();
 
-            BonusType playerRace = ChooseRace();
+            IBonusType playerRace = ChooseRace();
 
             Player player = new Player(playerName, playerClass, playerRace/*, new Level()*/);
 
@@ -53,7 +53,7 @@ namespace OOP2
             Console.WriteLine($"defence: {player.defence.value}");
             Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
             Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
-            Console.WriteLine($"Maximun health points: {player.healthPower.value}");
+            Console.WriteLine($"Maximun health points: {player.healthPoints.value}");
         }
 
         private static string ChoosePlayerName()
@@ -62,11 +62,11 @@ namespace OOP2
             return playerName;
         }
 
-        private static BonusType ChooseClass()
+        private static IBonusType ChooseClass()
         {
             Console.WriteLine("Choose your class! \n1. Warrior \n2. Mage");
 
-            BonusType playerClass = Console.ReadLine() switch
+            IBonusType playerClass = Console.ReadLine() switch
             {
                 "1" => playerClass = new Warrior(),
                 "2" => playerClass = new Mage(),
@@ -84,12 +84,12 @@ namespace OOP2
 
         }
 
-        private static BonusType ChooseRace()
+        private static IBonusType ChooseRace()
         {
 
             Console.WriteLine("Choose your race! \n1. Elf\n2. Orc");
 
-            BonusType playerRace = Console.ReadLine() switch
+            IBonusType playerRace = Console.ReadLine() switch
             {
                 "1" => playerRace = new Elf(),
                 "2" => playerRace = new Orc(),
