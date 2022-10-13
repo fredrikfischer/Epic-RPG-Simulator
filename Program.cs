@@ -11,7 +11,9 @@ namespace OOP2
 
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
             Console.ReadLine(); Console.Clear();
-            Menu();        }
+            Menu();
+
+        }
 
 
         private static void Menu()
@@ -27,8 +29,6 @@ namespace OOP2
             Player player = new Player(playerName, playerClass, playerRace/*, new Level()*/);
 
             ChooseAction(player);
-
-
 
             /*
             Console.WriteLine($"\nAttack damage: {player1.attributes.attackDamage.value}");
@@ -108,7 +108,7 @@ namespace OOP2
         private static void ChooseAction(Player player)
         {
             Console.WriteLine("Choose action");
-            Console.WriteLine("1. Fight next opponent");
+            Console.WriteLine("1. Fight opponent");
             Console.WriteLine("2. Go to item shop");
             Console.WriteLine("3. See statistics");
             displayStats(player);
@@ -116,8 +116,9 @@ namespace OOP2
             {
                 case "1":
                     Console.Clear();
-                    Match match = new Match(player);
-                    
+                    //Match match = new Match(player);
+                    ChooseEnemy(player);
+
                     break;
                 case "2":
                     Console.Clear();
@@ -133,6 +134,58 @@ namespace OOP2
                     break;
 
             }
+        }
+        private static void ChooseEnemy(Player player)
+        {
+            Console.WriteLine("Choose difficulty for your next opponent");
+            //CW visar fakta om bounty osv för varje difficulty
+
+            Console.WriteLine("1. n gold, easy difficulty");
+            Console.WriteLine("2. n gold, easy difficulty");
+            Console.WriteLine("3. n gold, medium difficulty");
+            Console.WriteLine("4. n gold, medium difficulty");
+            Console.WriteLine("5. n gold, hard difficulty");
+            Console.WriteLine("6. n gold, extreme difficulty");
+            Console.WriteLine("7. n gold, super mega extreme difficulty");
+
+
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    CreateMatch(player, 1);
+                    break;
+                case "2":
+                    CreateMatch(player, 2);
+                    break;
+                case "3":
+                    CreateMatch(player, 3);
+                    break;
+                case "4":
+                    CreateMatch(player, 4);
+                    break;
+                case "5":
+                    CreateMatch(player, 5);
+                    break;
+                case "6":
+                    CreateMatch(player, 6);
+                    break;
+                case "7":
+                    CreateMatch(player, 7);
+                    break;
+                default:
+                    Console.WriteLine("xD");
+                    break;
+
+            }
+
+
+        }
+
+        static void CreateMatch(Player player, int difficulty)
+        {
+            Match match = new Match(player, new Enemy(difficulty));
+
         }
 
     }

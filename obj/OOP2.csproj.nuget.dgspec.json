@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {}
+    "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj": {
+    "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
+        "projectUniqueName": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj",
         "projectName": "OOP2",
-        "projectPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\OOP2.csproj",
-        "packagesPath": "C:\\Users\\Felicia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Felicia\\source\\repos\\OOP2_projekt\\obj\\",
+        "projectPath": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj",
+        "packagesPath": "C:\\Users\\hampus.back1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Felicia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hampus.back1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
