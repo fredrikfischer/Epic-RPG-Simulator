@@ -5,7 +5,7 @@ namespace OOP2 {
     public class Attribute
     { 
         public AttributeBonus attributeBonus;
-        double baseValue;
+        public double baseValue { get; private set; }
         public double currentValue { get; private set; }
         public double value { get => CalculateValue(); private set { this.value = value; }  } 
         
@@ -38,12 +38,14 @@ namespace OOP2 {
             }   
         }
 
+
+        //Döpa om denna?s
         public void AddCurrentValue(double incomingDamage)
         {
             currentValue += incomingDamage;
         }
 
-        public void reduceCurrentValue(double incomingDamage)
+        public void ReduceCurrentValue(double incomingDamage)
         {
             currentValue -= incomingDamage;
         }
@@ -52,5 +54,17 @@ namespace OOP2 {
         {
             return (baseValue + attributeBonus.bonusRawList.Sum()) * (1 + attributeBonus.bonusMultiplyerList.Sum());
         }    
+
+        public void ResetHealth(Player player)
+        {
+            currentValue = baseValue;
+
+        }
+
+        public void AddToCurrentHealth(Player player, int value)
+        {
+            currentValue += value;
+        }
+
     }
 }

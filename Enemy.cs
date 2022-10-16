@@ -20,15 +20,15 @@ namespace OOP2
 
             name = GenerateName();
             description = "";
-            bounty = 50 * difficulty;
+            bounty = 80 * ((difficulty / 2) + 1);
             this.difficulty = difficulty;
 
 
-            attackDamage = new Attribute(80 * difficulty);
-            defence = new Attribute(20 * difficulty);
-            critChance = new Attribute(0.1 * difficulty);
-            critDamage = new Attribute(0.1 * difficulty);
-            healthPoints = new Attribute(100 * difficulty);
+            attackDamage = new Attribute(80 * ((difficulty / 2) + 1));
+            defence = new Attribute(20 * ((difficulty / 2) + 1));
+            critChance = new Attribute(0.1);
+            critDamage = new Attribute(0.1);
+            healthPoints = new Attribute(700 * ((difficulty / 2) + 1));
 
 			//name = "Spok";
             //description = "Spok is a spooky creature from Transylvania!";

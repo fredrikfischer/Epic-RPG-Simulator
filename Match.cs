@@ -1,19 +1,30 @@
 using System;
+using System.Media;
+
+
 namespace OOP2
 {
     class Match
     {
 
-        //Player player;???
-        //Enemy enemy;????
-
         public Match(Player player, Enemy enemy)
         {
 
-            //TODO enemy ska passas in i Match()
-            //Enemy enemy = new Enemy(1);
+            if (OperatingSystem.IsWindows())
+            {
+                SoundPlayer sound = new SoundPlayer();
+                sound.SoundLocation = Environment.CurrentDirectory + "/Dragonforce - Through The Fire And The Flames (Renegade 8 Bit Remix).wav";
+                sound.Load();
+                sound.Play();
+
+            }
+
+
+
+
             //fixa problemet med att båda dör samt trippla writelines
-            Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold \n\n\nPress any button to start the fight...");
+            Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold");
+            //Console.WriteLine("i början av round);\n\n\nPress any button to start the fight...");
             Console.WriteLine();
             Console.ReadLine();
             Console.Clear();
@@ -23,59 +34,86 @@ namespace OOP2
 
         private void Round(Player player, Enemy enemy)
         {
+            //Console.Beep();
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
 
-            while (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
+            while (player.healthPoints.currentValue >= 0 && enemy.healthPoints.currentValue >= 0)
             {
+
 
                 Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
 
                 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
                 string? input = Console.ReadLine();
-                Console.Clear();
+                //Console.Clear();
                 switch (input)
                 {
                     case "1":
-                        useAbility(player, enemy);
+                        Console.Clear();
+                        UseAbility(player, enemy);
+                        UseAbility(enemy, player);
+                        break;
+
+                    case "3":
+                        Console.Clear();
+                        ChooseConsumable(player);
+
                         break;
                     default:
-                        Round(player, enemy);
+
                         break;
                 }
-                Console.ReadLine();
-                Console.Clear();
-                useAbility(enemy, player);
-                Console.ReadLine();
-                Console.Clear();
+                //Console.ReadLine();
+                //Console.Clear();
+
+                /*  Console.ReadLine();
+                 Console.Clear(); */
                 Round(player, enemy);
                 System.Console.WriteLine("i while");
 
             }
-            System.Console.WriteLine("efter while");
+            
 
-            if (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
+            if (player.healthPoints.currentValue < 0 && enemy.healthPoints.currentValue < 0)
             {
                 Console.WriteLine("You both died in the fight RIP");
             }
             else if (player.healthPoints.currentValue > enemy.healthPoints.currentValue)
             {
+                //Console.Beep();
                 Console.WriteLine("Congrats " + player.name + ", you won the fight!!");
                 //Console.WriteLine("1. return to menu");
                 //Console.WriteLine("2. see stats");
+                int bounty = 50;
+                UpdatePlayer(player, bounty);
+                Console.ReadLine();
+                Console.Clear();
+                Program.ChooseAction(player);
             }
             else
             {
                 Console.WriteLine("You lost against " + enemy.name + "!");
             }
 
-            System.Console.WriteLine("efter if else");
 
+            Console.ReadLine();
+            Console.Clear();
 
 
 
         }
 
-        private void useAbility(Player player, Enemy enemy)
+        private void UpdatePlayer(Player player, int bounty)
         {
+            Player.UpdatePlayerHealth(player);
+            Player.AddGold(player, bounty);
+        }
+
+
+        private void UseAbility(Player player, Enemy enemy)
+        {
+
             //Calculates crit
             Random rnd = new Random();
             double totalDamage;
@@ -93,16 +131,16 @@ namespace OOP2
 
             if (totalDamage >= 0)
             {
-                enemy.healthPoints.reduceCurrentValue(totalDamage);
+                enemy.healthPoints.ReduceCurrentValue(totalDamage);
             }
             else
             {
                 totalDamage = 0;
             }
-            Console.WriteLine($"You attack and hurt {enemy.name} with {totalDamage} damage");
+            Console.WriteLine($"You attacked and hurt {enemy.name} with {totalDamage} damage");
         }
 
-        private void useAbility(Enemy enemy, Player player)
+        private void UseAbility(Enemy enemy, Player player)
         {
             //Calculates crit
             Random rnd = new Random();
@@ -121,13 +159,53 @@ namespace OOP2
 
             if (totalDamage >= 0)
             {
-                player.healthPoints.reduceCurrentValue(totalDamage);
+                player.healthPoints.ReduceCurrentValue(totalDamage);
             }
             else
             {
                 totalDamage = 0;
             }
-            Console.WriteLine($"{enemy.name} attack and hurt you with {totalDamage} damage");
+            Console.WriteLine($"{enemy.name} attacked and hurt you with {totalDamage} damage");
+
+        }
+
+        private static void UseItem(Player player, Item item)
+        {
+
+            if (item.type == "Heal")
+            {
+                Player.HealPlayer(player, item.value);
+            }
+
+            player.RemoveItem(player, item);
+
+
+        }
+
+        private static void ChooseConsumable(Player player)
+        {
+
+            int i = 1;
+            foreach (Item item in player.items)
+            {
+
+                System.Console.WriteLine(i + ". " + item.name);
+                i++;
+            }
+
+            string? input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    Player.UseConsumable(player, player.items.ElementAt(0));
+                    break;
+
+                case "2":
+
+                    break;
+                default:
+                    break;
+            }
 
         }
 

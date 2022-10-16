@@ -30,6 +30,7 @@ namespace OOP2
 
             ChooseAction(player);
 
+
             /*
             Console.WriteLine($"\nAttack damage: {player1.attributes.attackDamage.value}");
             Console.WriteLine($"defence: {player1.attributes.defence.value}");
@@ -54,6 +55,7 @@ namespace OOP2
             Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
             Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
             Console.WriteLine($"Maximun health points: {player.healthPoints.value}");
+            Console.WriteLine($"Current gold: {player.currentGold}");
         }
 
         private static string ChoosePlayerName()
@@ -76,7 +78,7 @@ namespace OOP2
 
             Console.Clear();
             Console.WriteLine($"You chose the {playerClass.name} class, that's a good choice! Prepare for an epic adventure!!!");
-            Console.WriteLine("\n\nPress any key to continue...");
+            //Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadLine();
             Console.Clear();
 
@@ -98,14 +100,14 @@ namespace OOP2
 
             Console.Clear();
             Console.WriteLine($"You chose the {playerRace.name} race! Prepare for an epic adventure!!");
-            Console.WriteLine("\n\nPress any key to continue...");
+            //Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadLine();
             Console.Clear();
 
             return playerRace;
         }
 
-        private static void ChooseAction(Player player)
+        public static void ChooseAction(Player player)
         {
             Console.WriteLine("Choose action");
             Console.WriteLine("1. Fight opponent");
@@ -122,7 +124,7 @@ namespace OOP2
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("item shop");
+                    Itemshop itemShop = new Itemshop(player);
                     break;
                 case "3":
                     Console.Clear();
@@ -178,7 +180,8 @@ namespace OOP2
                     break;
 
             }
-
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
 
         }
 
