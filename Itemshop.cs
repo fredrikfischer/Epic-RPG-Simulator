@@ -16,8 +16,7 @@ namespace OOP2
             Console.WriteLine("5. ");
             Console.WriteLine("6. ");
             Console.WriteLine("7. ");
-
-
+            Console.WriteLine("8. ");
 
             switch (Console.ReadLine())
             {
@@ -27,25 +26,25 @@ namespace OOP2
                     player.DeleteGold(50);
                     break;
                 case "2":
-
+                    Console.Clear();
                     break;
                 case "3":
-
+                    Console.Clear();
                     break;
                 case "4":
-
+                    Console.Clear();
                     break;
                 case "5":
-
+                    Console.Clear();
                     break;
                 case "6":
-
+                    Console.Clear();    
                     break;
                 case "7":
-
+                    Console.Clear();
                     break;
                 default:
-                    Console.WriteLine("xD");
+                    Console.Clear();
                     break;
 
 

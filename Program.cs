@@ -50,7 +50,8 @@ namespace OOP2
 
         private static void displayStats(Player player)
         {
-            Console.WriteLine($"\nAttack damage: {player.attackDamage.value}");
+            Console.WriteLine($"{player.name}, {player.raceType.name} {player.classType.name}");
+            Console.WriteLine($"Attack damage: {player.attackDamage.value}");
             Console.WriteLine($"defence: {player.defence.value}");
             Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
             Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
@@ -109,34 +110,44 @@ namespace OOP2
 
         public static void ChooseAction(Player player)
         {
-            Console.WriteLine("Choose action");
-            Console.WriteLine("1. Fight opponent");
-            Console.WriteLine("2. Go to item shop");
-            Console.WriteLine("3. See statistics");
-            displayStats(player);
-            switch (Console.ReadLine())
+            bool rightInput = false;
+            while(!rightInput)
             {
-                case "1":
-                    Console.Clear();
-                    //Match match = new Match(player);
-                    ChooseEnemy(player);
 
-                    break;
-                case "2":
-                    Console.Clear();
-                    Itemshop itemShop = new Itemshop(player);
-                    break;
-                case "3":
-                    Console.Clear();
-                    Console.WriteLine("statistics");
-                    break;
-                default:
-                    Console.Clear();
-                    Console.WriteLine("xD");
-                    break;
+                Console.WriteLine("Choose action");
+                Console.WriteLine("1. Fight opponent");
+                Console.WriteLine("2. Go to item shop");
+                Console.WriteLine("3. See statistics\n");
+                displayStats(player);
+                
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Console.Clear();
+                        //Match match = new Match(player);
+                        ChooseEnemy(player);
+                        Console.Clear();
 
+                        break;
+                    case "2":
+                        Console.Clear();
+                        Itemshop itemShop = new Itemshop(player);
+                        Console.Clear();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        displayStats(player);
+                        Console.Clear();
+                        break;
+                    default:
+                        Console.Clear();
+                        break;
+                }                
             }
+            
         }
+
+        
         private static void ChooseEnemy(Player player)
         {
             Console.WriteLine("Choose difficulty for your next opponent");
@@ -155,28 +166,35 @@ namespace OOP2
             switch (Console.ReadLine())
             {
                 case "1":
+                    Console.Clear();
                     CreateMatch(player, 1);
                     break;
                 case "2":
+                    Console.Clear();
                     CreateMatch(player, 2);
                     break;
                 case "3":
+                    Console.Clear();
                     CreateMatch(player, 3);
                     break;
                 case "4":
+                    Console.Clear();
                     CreateMatch(player, 4);
                     break;
                 case "5":
+                    Console.Clear();
                     CreateMatch(player, 5);
                     break;
                 case "6":
+                    Console.Clear();
                     CreateMatch(player, 6);
                     break;
                 case "7":
+                    Console.Clear();
                     CreateMatch(player, 7);
                     break;
                 default:
-                    Console.WriteLine("xD");
+                    Console.Clear();
                     break;
 
             }

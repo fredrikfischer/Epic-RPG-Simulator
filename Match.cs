@@ -35,24 +35,22 @@ namespace OOP2
         private void Round(Player player, Enemy enemy)
         {
             //Console.Beep();
-            System.Console.WriteLine("");
-            System.Console.WriteLine("");
+            //System.Console.WriteLine("\n\n\n\n\n\n");
 
             while (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
             {
-
-
                 Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
-
                 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
-                string? input = Console.ReadLine();
-                //Console.Clear();
-                switch (input)
+
+                switch (Console.ReadLine())
                 {
                     case "1":
                         Console.Clear();
                         UseAbility(player, enemy);
+                        Console.WriteLine();
                         UseAbility(enemy, player);
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
 
                     case "3":
@@ -61,15 +59,9 @@ namespace OOP2
 
                         break;
                     default:
-
+                        Console.Clear();
                         break;
                 }
-                //Console.ReadLine();
-                //Console.Clear();
-
-                /*  Console.ReadLine();
-                 Console.Clear(); */
-
             }
             
 
