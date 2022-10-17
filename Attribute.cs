@@ -45,7 +45,7 @@ namespace OOP2 {
 
         public void reduceCurrentValue(double incomingDamage)
         {
-            currentValue -= incomingDamage;
+            currentValue -= incomingDamage;1
         }
 
         public double CalculateValue()
