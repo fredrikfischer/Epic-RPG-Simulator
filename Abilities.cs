@@ -10,7 +10,5 @@ namespace OOP2
 		{
 			this.hej = "hej";
 		}
-
-		
 	}
 }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj": {}
+    "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj": {}
   },
   "projects": {
-    "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj": {
+    "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
+        "projectUniqueName": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj",
         "projectName": "OOP2",
-        "projectPath": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
-        "packagesPath": "/home/fredrikfischer/.nuget/packages/",
-        "outputPath": "/home/fredrikfischer/Documents/Programmering/OOP2/obj/",
+        "projectPath": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj",
+        "packagesPath": "C:\\Users\\hampus.back1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/fredrikfischer/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\hampus.back1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,13 +34,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Windows.Extensions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -47,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

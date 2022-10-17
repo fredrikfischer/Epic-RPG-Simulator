@@ -11,7 +11,9 @@ namespace OOP2
 
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
             Console.ReadLine(); Console.Clear();
-            Menu();        }
+            Menu();
+
+        }
 
 
         private static void Menu()
@@ -20,14 +22,13 @@ namespace OOP2
             string playerName = ChoosePlayerName();
 
 
-            BonusType playerClass = ChooseClass();
+            IBonusType playerClass = ChooseClass();
 
-            BonusType playerRace = ChooseRace();
+            IBonusType playerRace = ChooseRace();
 
             Player player = new Player(playerName, playerClass, playerRace/*, new Level()*/);
 
             ChooseAction(player);
-
 
 
             /*
@@ -53,7 +54,8 @@ namespace OOP2
             Console.WriteLine($"defence: {player.defence.value}");
             Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
             Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
-            Console.WriteLine($"Maximun health points: {player.healthPower.value}");
+            Console.WriteLine($"Maximun health points: {player.healthPoints.value}");
+            Console.WriteLine($"Current gold: {player.currentGold}");
         }
 
         private static string ChoosePlayerName()
@@ -62,11 +64,11 @@ namespace OOP2
             return playerName;
         }
 
-        private static BonusType ChooseClass()
+        private static IBonusType ChooseClass()
         {
             Console.WriteLine("Choose your class! \n1. Warrior \n2. Mage");
 
-            BonusType playerClass = Console.ReadLine() switch
+            IBonusType playerClass = Console.ReadLine() switch
             {
                 "1" => playerClass = new Warrior(),
                 "2" => playerClass = new Mage(),
@@ -76,7 +78,7 @@ namespace OOP2
 
             Console.Clear();
             Console.WriteLine($"You chose the {playerClass.name} class, that's a good choice! Prepare for an epic adventure!!!");
-            Console.WriteLine("\n\nPress any key to continue...");
+            //Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadLine();
             Console.Clear();
 
@@ -84,12 +86,12 @@ namespace OOP2
 
         }
 
-        private static BonusType ChooseRace()
+        private static IBonusType ChooseRace()
         {
 
             Console.WriteLine("Choose your race! \n1. Elf\n2. Orc");
 
-            BonusType playerRace = Console.ReadLine() switch
+            IBonusType playerRace = Console.ReadLine() switch
             {
                 "1" => playerRace = new Elf(),
                 "2" => playerRace = new Orc(),
@@ -98,17 +100,17 @@ namespace OOP2
 
             Console.Clear();
             Console.WriteLine($"You chose the {playerRace.name} race! Prepare for an epic adventure!!");
-            Console.WriteLine("\n\nPress any key to continue...");
+            //Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadLine();
             Console.Clear();
 
             return playerRace;
         }
 
-        private static void ChooseAction(Player player)
+        public static void ChooseAction(Player player)
         {
             Console.WriteLine("Choose action");
-            Console.WriteLine("1. Fight next opponent");
+            Console.WriteLine("1. Fight opponent");
             Console.WriteLine("2. Go to item shop");
             Console.WriteLine("3. See statistics");
             displayStats(player);
@@ -116,12 +118,13 @@ namespace OOP2
             {
                 case "1":
                     Console.Clear();
-                    Match match = new Match(player);
-                    
+                    //Match match = new Match(player);
+                    ChooseEnemy(player);
+
                     break;
                 case "2":
                     Console.Clear();
-                    Console.WriteLine("item shop");
+                    Itemshop itemShop = new Itemshop(player);
                     break;
                 case "3":
                     Console.Clear();
@@ -133,6 +136,59 @@ namespace OOP2
                     break;
 
             }
+        }
+        private static void ChooseEnemy(Player player)
+        {
+            Console.WriteLine("Choose difficulty for your next opponent");
+            //CW visar fakta om bounty osv för varje difficulty
+
+            Console.WriteLine("1. n gold, easy difficulty");
+            Console.WriteLine("2. n gold, easy difficulty");
+            Console.WriteLine("3. n gold, medium difficulty");
+            Console.WriteLine("4. n gold, medium difficulty");
+            Console.WriteLine("5. n gold, hard difficulty");
+            Console.WriteLine("6. n gold, extreme difficulty");
+            Console.WriteLine("7. n gold, super mega extreme difficulty");
+
+
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    CreateMatch(player, 1);
+                    break;
+                case "2":
+                    CreateMatch(player, 2);
+                    break;
+                case "3":
+                    CreateMatch(player, 3);
+                    break;
+                case "4":
+                    CreateMatch(player, 4);
+                    break;
+                case "5":
+                    CreateMatch(player, 5);
+                    break;
+                case "6":
+                    CreateMatch(player, 6);
+                    break;
+                case "7":
+                    CreateMatch(player, 7);
+                    break;
+                default:
+                    Console.WriteLine("xD");
+                    break;
+
+            }
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
+
+        }
+
+        static void CreateMatch(Player player, int difficulty)
+        {
+            Match match = new Match(player, new Enemy(difficulty));
+
         }
 
     }
