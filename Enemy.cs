@@ -45,7 +45,7 @@ namespace OOP2
 
         private string GenerateName()
         {
-            string[] name = {"Spok", "Murloc", "Wolf", "Centaur", "Golem", "Troll", "Dragon", "Ghost"};
+            string[] name = {"Spok", "Murloc", "Wolf", "Centaur", "Goolem", "Troll", "Dragon", "Ghust"};
             Random rnd = new Random();
             return name[rnd.Next(0, name.Length - 1)];
 

@@ -69,8 +69,6 @@ namespace OOP2
 
                 /*  Console.ReadLine();
                  Console.Clear(); */
-                Round(player, enemy);
-                System.Console.WriteLine("i while");
 
             }
             

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2rZcV6b9R8y5jN/0x9kAM+VbNlyNiTaO5sTD53sO2Qx3bOV40REu6zngO5WzTz7idL9M6fBJiogAAtTEcXdjOg==",
+  "dgSpecHash": "sNBwQc/UVeQw3dSo6dpVC27LalukVWZbOex3uGDifS6UEgGmTqBTB/bRSuDXpts9bczQ21UxknFyDoIBXtNnYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hampus.back1\\Documents\\projekt\\OOP2\\OOP2_projekt\\OOP2.csproj",
+  "projectFilePath": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\hampus.back1\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\hampus.back1\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
-    "C:\\Users\\hampus.back1\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "/home/fredrikfischer/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/home/fredrikfischer/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
+    "/home/fredrikfischer/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
