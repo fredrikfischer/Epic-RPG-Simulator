@@ -51,47 +51,47 @@ namespace OOP2
 
         }
 
-        public static void AddGold(Player player, int bounty)
+        public void AddGold(int bounty)
         {
-            player.currentGold += bounty;
+            currentGold += bounty;
         }
 
-        public static void UpdatePlayerHealth(Player player)
+        public void UpdatePlayerHealth(Player player)
         {
-            player.healthPoints = new Attribute(player.healthPoints.baseValue);
-            player.healthPoints.AddAttributeBonuses(player.classType.healthPoints);
-            player.healthPoints.AddAttributeBonuses(player.raceType.healthPoints);
+            healthPoints = new Attribute(player.healthPoints.baseValue);
+            healthPoints.AddAttributeBonuses(player.classType.healthPoints);
+            healthPoints.AddAttributeBonuses(player.raceType.healthPoints);
 
 
         }
-        public static void AddItem(Player player, Item item)
+        public void AddItem(Item item)
         {
-            player.items.Add(item);
+            items.Add(item);
 
         }
-        public static void HealPlayer(Player player, int value)
+        public void HealPlayer(int value)
         {
-            player.healthPoints.AddToCurrentHealth(player, value);
+            healthPoints.AddToCurrentHealth(value);
         }
-        public static void DeleteGold(Player player, int value)
+        public void DeleteGold(int value)
         {
-            player.currentGold -= value;
+            currentGold -= value;
         }
 
-        public static void UseConsumable(Player player, Item item)
+        public void UseConsumable(Item item)
         {
             if (item.type == "Heal")
             {
-                HealPlayer(player, item.value);
+                HealPlayer(item.value);
             }
 
-            player.RemoveItem(player, item);
+            RemoveItem(item);
 
         }
 
-        public void RemoveItem(Player player, Item item)
+        public void RemoveItem(Item item)
         {
-            player.items.Remove(item);
+            items.Remove(item);
 
 
         }

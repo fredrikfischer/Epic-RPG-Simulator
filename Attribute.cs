@@ -61,7 +61,7 @@ namespace OOP2 {
 
         }
 
-        public void AddToCurrentHealth(Player player, int value)
+        public void AddToCurrentHealth(int value)
         {
             currentValue += value;
         }

@@ -23,8 +23,8 @@ namespace OOP2
             {
                 case "1":
                     Item healingSalve = new Item("Healing Salve", 50, "Heal", 50);
-                    Player.AddItem(player, healingSalve);
-                    Player.DeleteGold(player, 50);
+                    player.AddItem(healingSalve);
+                    player.DeleteGold(50);
                     break;
                 case "2":
 

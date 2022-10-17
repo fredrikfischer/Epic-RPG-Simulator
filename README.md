@@ -12,3 +12,4 @@
 * uppdatera klassmedlemmar istället för att skapa nya, annars göra if kontroll
 * göra felhantering
 * kunna navigera med piltangenterna
+* composite pattern med items / abilitys?

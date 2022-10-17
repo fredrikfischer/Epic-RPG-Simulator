@@ -38,7 +38,7 @@ namespace OOP2
             System.Console.WriteLine("");
             System.Console.WriteLine("");
 
-            while (player.healthPoints.currentValue >= 0 && enemy.healthPoints.currentValue >= 0)
+            while (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
             {
 
 
@@ -106,8 +106,8 @@ namespace OOP2
 
         private void UpdatePlayer(Player player, int bounty)
         {
-            Player.UpdatePlayerHealth(player);
-            Player.AddGold(player, bounty);
+            player.UpdatePlayerHealth(player);
+            player.AddGold(bounty);
         }
 
 
@@ -169,20 +169,20 @@ namespace OOP2
 
         }
 
-        private static void UseItem(Player player, Item item)
+        private void UseItem(Player player, Item item)
         {
 
             if (item.type == "Heal")
             {
-                Player.HealPlayer(player, item.value);
+                player.HealPlayer(item.value);
             }
 
-            player.RemoveItem(player, item);
+            player.RemoveItem(item);
 
 
         }
 
-        private static void ChooseConsumable(Player player)
+        private void ChooseConsumable(Player player)
         {
 
             int i = 1;
@@ -197,7 +197,7 @@ namespace OOP2
             switch (input)
             {
                 case "1":
-                    Player.UseConsumable(player, player.items.ElementAt(0));
+                    player.UseConsumable(player.items.ElementAt(0));
                     break;
 
                 case "2":
