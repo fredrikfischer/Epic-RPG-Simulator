@@ -17,12 +17,6 @@ namespace OOP2
             this.value = value;
             this.type = type;
             this.cost = cost;
-
-
-
         }
-
-        
-    }
-    
+    }    
 }

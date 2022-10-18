@@ -6,20 +6,11 @@ namespace OOP2
     {
         public Itemshop(Player player)
         {
-            Console.WriteLine("Welcome to the item shop /n/n here you can buy items to use in your fight");
-            Console.WriteLine("Your balance is " + player.currentGold + " gold");
-
-            Console.WriteLine("1. Healing salve 50 gold");
-            Console.WriteLine("2. ");
-            Console.WriteLine("3. ");
-            Console.WriteLine("4. ");
-            Console.WriteLine("5. ");
-            Console.WriteLine("6. ");
-            Console.WriteLine("7. ");
-            Console.WriteLine("8. ");
+            GUI.displayItemShop(player);
 
             switch (Console.ReadLine())
             {
+
                 case "1":
                     Item healingSalve = new Item("Healing Salve", 50, "Heal", 50);
                     player.AddItem(healingSalve);
@@ -46,13 +37,8 @@ namespace OOP2
                 default:
                     Console.Clear();
                     break;
-
-
-
             }
             Program.ChooseAction(player);
-
-
         }
 
     }
