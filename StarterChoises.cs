@@ -1,7 +1,7 @@
 using System;
 
 namespace OOP2 {
-    public class Starter
+    public class StarterChoises
     { 
         public static Player GetStarterChoises()
         {

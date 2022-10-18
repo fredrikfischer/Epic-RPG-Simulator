@@ -9,7 +9,7 @@ namespace OOP2
         static void Main(string[] args)
         {
             GUI.displayWelcome();
-            Player player = Starter.GetStarterChoises();
+            Player player = StarterChoises.GetStarterChoises();
             ChooseAction(player);
         }
 
