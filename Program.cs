@@ -20,6 +20,7 @@ namespace OOP2
             {
 
                 GUI.displayChooseAction();
+                Console.WriteLine("");
                 GUI.displayStats(player);
                 
                 switch (Console.ReadLine())
@@ -29,7 +30,6 @@ namespace OOP2
                         //Match match = new Match(player);
                         ChooseEnemy(player);
                         Console.Clear();
-
                         break;
                     case "2":
                         Console.Clear();
