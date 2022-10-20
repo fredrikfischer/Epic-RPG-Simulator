@@ -15,3 +15,4 @@
 * composite pattern med items / abilitys?
 * observer pattern i game och match
 * generics covariant eller contravarient inte invariant, generic class 
+* statistik (in T1, out T2) spara, läsa in, skicka ut.
