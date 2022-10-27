@@ -4,44 +4,29 @@ using System.Media;
 
 namespace OOP2
 {
-    class Match
+    public class Match
     {
+        public Player player { get;}
+        public Enemy enemy { get;}
+        List<IMatchObserver> observerCollection;
+        public bool didWin;
 
         public Match(Player player, Enemy enemy)
         {
-
-            if (OperatingSystem.IsWindows())
-            {
-                SoundPlayer sound = new SoundPlayer();
-                sound.SoundLocation = Environment.CurrentDirectory + "/Dragonforce - Through The Fire And The Flames (Renegade 8 Bit Remix).wav";
-                sound.Load();
-                sound.Play();
-
-            }
-
-
-
-
-            //fixa problemet med att båda dör samt trippla writelines
-            Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold");
-            //Console.WriteLine("i början av round);\n\n\nPress any button to start the fight...");
-            Console.WriteLine();
+            this.player = player;
+            this.enemy = enemy;
+            observerCollection = new List<IMatchObserver>();
+            Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold\n");
             Console.ReadLine();
             Console.Clear();
-            Round(player, enemy);
-
         }
 
-        private void Round(Player player, Enemy enemy)
+        public void Round()
         {
-            //Console.Beep();
-            //System.Console.WriteLine("\n\n\n\n\n\n");
-
             while (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
             {
                 Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
                 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
-
                 switch (Console.ReadLine())
                 {
                     case "1":
@@ -64,7 +49,6 @@ namespace OOP2
                 }
             }
             
-
             if (player.healthPoints.currentValue < 0 && enemy.healthPoints.currentValue < 0)
             {
                 Console.WriteLine("You both died in the fight RIP");
@@ -73,103 +57,51 @@ namespace OOP2
             {
                 //Console.Beep();
                 Console.WriteLine("Congrats " + player.name + ", you won the fight!!");
-                //Console.WriteLine("1. return to menu");
-                //Console.WriteLine("2. see stats");
-                int bounty = 50;
-                UpdatePlayer(player, bounty);
+                didWin = true;
                 Console.ReadLine();
                 Console.Clear();
-                Program.ChooseAction(player);
             }
             else
             {
                 Console.WriteLine("You lost against " + enemy.name + "!");
             }
-
-
             Console.ReadLine();
             Console.Clear();
-
-
-
         }
 
-        private void UpdatePlayer(Player player, int bounty)
-        {
-            player.UpdatePlayerHealth(player);
-            player.AddGold(bounty);
-        }
+         private void UseAbility(IAttributes offender, IAttributes defender) 
+         {
+             //Calculates crit
+             Random rnd = new Random();
+             double totalDamage;
+             if (rnd.NextDouble() <= offender.critChance.value)
+             {
+                 totalDamage = (offender.attackDamage.value * (1 + offender.critDamage.value)) - defender.defence.value;
+                 Console.Write($"It's a critical hit! ");
+             }
+             else
+             {
+                 totalDamage = offender.attackDamage.value - defender.defence.value;
+             }
 
-
-        private void UseAbility(Player player, Enemy enemy)
-        {
-
-            //Calculates crit
-            Random rnd = new Random();
-            double totalDamage;
-            if (rnd.NextDouble() <= player.critChance.value)
-            {
-
-                totalDamage = (player.attackDamage.value * (1 + player.critDamage.value)) - enemy.defence.value;
-
-                Console.Write($"It's a critical hit! ");
-            }
-            else
-            {
-                totalDamage = player.attackDamage.value - enemy.defence.value;
-            }
-
-            if (totalDamage >= 0)
-            {
-                enemy.healthPoints.ReduceCurrentValue(totalDamage);
-            }
-            else
-            {
-                totalDamage = 0;
-            }
-            Console.WriteLine($"You attacked and hurt {enemy.name} with {totalDamage} damage");
-        }
-
-        private void UseAbility(Enemy enemy, Player player)
-        {
-            //Calculates crit
-            Random rnd = new Random();
-            double totalDamage;
-            if (rnd.NextDouble() <= enemy.critChance.value)
-            {
-
-                totalDamage = (enemy.attackDamage.value * (1 + player.critDamage.value)) - player.defence.value;
-
-                Console.Write($"It's a critical hit! ");
-            }
-            else
-            {
-                totalDamage = enemy.attackDamage.value - player.defence.value;
-            }
-
-            if (totalDamage >= 0)
-            {
-                player.healthPoints.ReduceCurrentValue(totalDamage);
-            }
-            else
-            {
-                totalDamage = 0;
-            }
-            Console.WriteLine($"{enemy.name} attacked and hurt you with {totalDamage} damage");
-
-        }
+             if (totalDamage >= 0)
+             {
+                 defender.healthPoints.ReduceCurrentValue(totalDamage);
+             }
+             else
+             {
+                 totalDamage = 0;
+             }
+             Console.WriteLine($"{offender.name} attacked and hurt you with {totalDamage} damage");
+         }        
 
         private void UseItem(Player player, Item item)
         {
-
             if (item.type == "Heal")
             {
                 player.HealPlayer(item.value);
             }
-
             player.RemoveItem(item);
-
-
         }
 
         private void ChooseConsumable(Player player)
@@ -178,7 +110,6 @@ namespace OOP2
             int i = 1;
             foreach (Item item in player.items)
             {
-
                 System.Console.WriteLine(i + ". " + item.name);
                 i++;
             }
@@ -196,10 +127,23 @@ namespace OOP2
                 default:
                     break;
             }
-
+        }
+        
+        public void AddObserver(IMatchObserver observer)
+        {
+            observerCollection.Add(observer);
         }
 
+        public void RemoveObserver()
+        {
+        }
 
+        public void NotifyObservers()
+        {
+           foreach(var observer in observerCollection) 
+           {
+                observer.UpdatePostMatch(this);
+           }
+        }
     }
-
 }

@@ -2,9 +2,14 @@ using System;
 
 namespace OOP2
 {
-    class Itemshop
+    class ItemShop
     {
-        public Itemshop(Player player)
+        public ItemShop()
+        {
+            
+        }
+
+        public void ChooseItem(Player player)
         {
             GUI.displayItemShop(player);
 
@@ -38,7 +43,6 @@ namespace OOP2
                     Console.Clear();
                     break;
             }
-            Program.ChooseAction(player);
         }
 
     }

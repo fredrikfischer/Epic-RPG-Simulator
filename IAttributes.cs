@@ -1,15 +1,14 @@
 using System;
 
 namespace OOP2 {
-    interface IAttributes
+    public interface IAttributes
     { 
-        
-        Attribute attackDamage { get; set; }
-        Attribute defence { get; set;}
-        Attribute critChance { get; set; }
-        Attribute critDamage { get; set; } 
-        Attribute maxHp { get; set; } 
-        Attribute currentHp { get; set; } 
+        public string name { get; }
+        public Attribute attackDamage { get; }
+        public Attribute defence { get; }
+        public Attribute critChance { get; }
+        public Attribute critDamage { get; } 
+        public Attribute healthPoints { get; } 
         //maybe public int level { get; set;}
         
 

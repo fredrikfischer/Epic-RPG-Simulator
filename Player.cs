@@ -3,9 +3,9 @@ using System.Reflection.PortableExecutable;
 
 namespace OOP2
 {
-    public class Player
+    public class Player : IMatchObserver, IAttributes
     {
-        public string? name { get; private set; }
+        public string name { get; private set; }
         public IBonusType classType { get; private set; }
         public IBonusType raceType { get; private set; }
 
@@ -20,7 +20,7 @@ namespace OOP2
 
         public Player(string playerName, IBonusType classType, IBonusType raceType)
         {
-            name = playerName;
+            this.name = playerName;
             this.classType = classType;
             this.raceType = raceType;
             //this.attackDamage.Add(raceType.attackDamage);
@@ -51,28 +51,23 @@ namespace OOP2
 
         }
 
-        public void AddGold(int bounty)
-        {
-            currentGold += bounty;
-        }
-
         public void UpdatePlayerHealth(Player player)
         {
             healthPoints = new Attribute(player.healthPoints.baseValue);
             healthPoints.AddAttributeBonuses(player.classType.healthPoints);
             healthPoints.AddAttributeBonuses(player.raceType.healthPoints);
-
-
         }
+
         public void AddItem(Item item)
         {
             items.Add(item);
-
         }
+
         public void HealPlayer(int value)
         {
             healthPoints.AddToCurrentHealth(value);
         }
+
         public void DeleteGold(int value)
         {
             currentGold -= value;
@@ -86,15 +81,20 @@ namespace OOP2
             }
 
             RemoveItem(item);
-
         }
 
         public void RemoveItem(Item item)
         {
             items.Remove(item);
-
-
         }
 
+        public void UpdatePostMatch(Match match)
+        {
+            if(match.didWin)
+            {
+                //Adds Gold
+                currentGold += match.enemy.bounty;
+            }
+        }
     }
 }

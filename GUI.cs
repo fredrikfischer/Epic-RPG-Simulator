@@ -9,15 +9,16 @@ namespace OOP2 {
             Console.ReadLine(); 
             Console.Clear();
         }
+
         public static void displayStats(Player player)
             {
                 Console.WriteLine($"{player.name}, {player.raceType.name} {player.classType.name}");
-                Console.WriteLine($"Attack damage: {player.attackDamage.value}");
-                Console.WriteLine($"defence: {player.defence.value}");
-                Console.WriteLine($"Critical hit chance: {player.critChance.value * 100}%");
-                Console.WriteLine($"Critical hit damage: {player.critDamage.value * 100}%");
-                Console.WriteLine($"Maximun health points: {player.healthPoints.value}");
+                Console.WriteLine($"Health points: {player.healthPoints.currentValue}/{player.healthPoints.value}");
                 Console.WriteLine($"Current gold: {player.currentGold}");
+                Console.WriteLine($"\nAttack damage: {player.attackDamage.value}");
+                Console.WriteLine($"defence: {player.defence.value}");
+                Console.WriteLine($"Critical hit chance: {Math.Round(player.critChance.value * 100, 2, MidpointRounding.ToEven)}%");
+                Console.WriteLine($"Critical hit damage: {Math.Round(player.critDamage.value * 100, 2, MidpointRounding.ToEven)}%");
             }
 
         public static void displayItemShop(Player player)
@@ -40,15 +41,15 @@ namespace OOP2 {
             Console.WriteLine("Choose difficulty for your next opponent");
             //CW visar fakta om bounty osv för varje difficulty
 
-            Console.WriteLine("1. n gold, easy difficulty");
-            Console.WriteLine("2. n gold, easy difficulty");
-            Console.WriteLine("3. n gold, medium difficulty");
-            Console.WriteLine("4. n gold, medium difficulty");
-            Console.WriteLine("5. n gold, hard difficulty");
-            Console.WriteLine("6. n gold, extreme difficulty");
-            Console.WriteLine("7. n gold, super mega extreme difficulty");
+            Console.WriteLine("1. Very easy ");
+            Console.WriteLine("2. Easy ");
+            Console.WriteLine("3. Easy/medium");
+            Console.WriteLine("4. Medium");
+            Console.WriteLine("5. Hard");
+            Console.WriteLine("6. Extreme");
+            Console.WriteLine("7. Mega extreme");
         }
-
+        
         public static void displayChooseAction()
         {
             Console.WriteLine("Choose action");

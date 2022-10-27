@@ -2,7 +2,7 @@ using System;
 
 namespace OOP2
 {
-	class Enemy 
+	public class Enemy : IAttributes
 	{
 
         public string name { get; private set; }

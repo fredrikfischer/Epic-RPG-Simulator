@@ -9,14 +9,12 @@ namespace OOP2 {
         public double currentValue { get; private set; }
         public double value { get => CalculateValue(); private set { this.value = value; }  } 
         
-
-        // For monster
         public Attribute(int baseValue){   
             attributeBonus = new AttributeBonus();
             this.baseValue = baseValue;
             currentValue = CalculateValue();
         }
-        // For monster
+
         public Attribute(double baseValue){   
             attributeBonus = new AttributeBonus();
             this.baseValue = baseValue;
@@ -38,8 +36,6 @@ namespace OOP2 {
             }   
         }
 
-
-        //Döpa om denna?s
         public void AddCurrentValue(double incomingDamage)
         {
             currentValue += incomingDamage;
