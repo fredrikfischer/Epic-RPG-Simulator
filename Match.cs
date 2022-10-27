@@ -8,13 +8,18 @@ namespace OOP2
     {
         public Player player { get;}
         public Enemy enemy { get;}
+        public DateTime matchStart;
+        public DateTime matchEnd;
+        public int roundsPlayed;
         List<IMatchObserver> observerCollection;
         public bool didWin;
 
         public Match(Player player, Enemy enemy)
         {
+            matchStart = DateTime.Now;
             this.player = player;
             this.enemy = enemy;
+            this.roundsPlayed = 0;
             observerCollection = new List<IMatchObserver>();
             Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold\n");
             Console.ReadLine();
@@ -25,6 +30,7 @@ namespace OOP2
         {
             while (player.healthPoints.currentValue > 0 && enemy.healthPoints.currentValue > 0)
             {
+                roundsPlayed++;
                 Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
                 Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
                 switch (Console.ReadLine())
@@ -47,6 +53,7 @@ namespace OOP2
                         Console.Clear();
                         break;
                 }
+                
             }
             
             if (player.healthPoints.currentValue < 0 && enemy.healthPoints.currentValue < 0)

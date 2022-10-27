@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sNBwQc/UVeQw3dSo6dpVC27LalukVWZbOex3uGDifS6UEgGmTqBTB/bRSuDXpts9bczQ21UxknFyDoIBXtNnYg==",
+  "dgSpecHash": "KdjaenQQPV2VrM7Iput37v9BprpzCu5XNCzOG0bKZnVVs+NbcZXJL5mRp71fBN0DBkthFpO/0WBHXCknfwSqIA==",
   "success": true,
   "projectFilePath": "/home/fredrikfischer/Documents/Programmering/OOP2/OOP2.csproj",
   "expectedPackageFiles": [
     "/home/fredrikfischer/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/home/fredrikfischer/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/home/fredrikfischer/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
     "/home/fredrikfischer/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
