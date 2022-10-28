@@ -20,7 +20,7 @@ namespace OOP2
         public void UpdatePostMatch(Match match)
         {
             matches.Add(match);
-            ExportStatistics();
+            ExportStatistics(matches);
         }
 
         private int GetTotalMatches()
@@ -75,13 +75,21 @@ namespace OOP2
         {
             Console.ForegroundColor = ConsoleColor.Red;  
             Console.WriteLine($"{text} {input}");        
-            Console.ForegroundColor = ConsoleColor.White;                  
+            Console.ForegroundColor = ConsoleColor.White;
+            System.Console.WriteLine(GetStatistics()); 
         }
 
-        async void ExportStatistics()
+        async void ExportStatistics<T>(T t)
         {
-        string json = JsonConvert.SerializeObject(matches);
-        await File.WriteAllTextAsync("History.md", json);
+        string json = JsonConvert.SerializeObject(t);
+        await File.AppendAllTextAsync("History.md", json);
+        }
+        public T GetStatistics<out T>()
+        {
+            string textOutput = File.ReadAllText("History.md");
+            T t = JsonConvert.DeserializeObject<T>(textOutput);
+            return t;
+            
         }
     }
 }

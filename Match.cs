@@ -63,6 +63,7 @@ namespace OOP2
             else if (player.healthPoints.currentValue > enemy.healthPoints.currentValue)
             {
                 //Console.Beep();
+                matchEnd = DateTime.Now;
                 Console.WriteLine("Congrats " + player.name + ", you won the fight!!");
                 didWin = true;
                 Console.ReadLine();

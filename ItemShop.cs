@@ -6,7 +6,7 @@ namespace OOP2
     {
         public ItemShop()
         {
-            
+
         }
 
         public void ChooseItem(Player player)
@@ -17,9 +17,8 @@ namespace OOP2
             {
 
                 case "1":
-                    Item healingSalve = new Item("Healing Salve", 50, "Heal", 50);
-                    player.AddItem(healingSalve);
-                    player.DeleteGold(50);
+
+                    AddItem(player, new Item("Healing Salve", 50, "Heal", 50));
                     break;
                 case "2":
                     Console.Clear();
@@ -34,7 +33,7 @@ namespace OOP2
                     Console.Clear();
                     break;
                 case "6":
-                    Console.Clear();    
+                    Console.Clear();
                     break;
                 case "7":
                     Console.Clear();
@@ -43,6 +42,20 @@ namespace OOP2
                     Console.Clear();
                     break;
             }
+        }
+        private void AddItem(Player player, Item item)
+        {
+            if (player.currentGold > item.cost)
+            {
+                player.AddItem(item);
+                player.DeleteGold(50);
+            }
+            else
+            {
+                Console.WriteLine("You dont have enough gold");
+                Console.ReadLine();
+            }
+
         }
 
     }
