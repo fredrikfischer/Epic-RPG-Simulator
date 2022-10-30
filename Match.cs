@@ -6,8 +6,8 @@ namespace OOP2
 {
     public class Match
     {
-        public Player player { get;}
-        public Enemy enemy { get;}
+        public Player player { get; }
+        public Enemy enemy { get; }
         public DateTime matchStart;
         public DateTime matchEnd;
         public int roundsPlayed;
@@ -53,9 +53,9 @@ namespace OOP2
                         Console.Clear();
                         break;
                 }
-                
+
             }
-            
+
             if (player.healthPoints.currentValue < 0 && enemy.healthPoints.currentValue < 0)
             {
                 Console.WriteLine("You both died in the fight RIP");
@@ -77,40 +77,33 @@ namespace OOP2
             Console.Clear();
         }
 
-         private void UseAbility(IAttributes offender, IAttributes defender) 
-         {
-             //Calculates crit
-             Random rnd = new Random();
-             double totalDamage;
-             if (rnd.NextDouble() <= offender.critChance.value)
-             {
-                 totalDamage = (offender.attackDamage.value * (1 + offender.critDamage.value)) - defender.defence.value;
-                 Console.Write($"It's a critical hit! ");
-             }
-             else
-             {
-                 totalDamage = offender.attackDamage.value - defender.defence.value;
-             }
-
-             if (totalDamage >= 0)
-             {
-                 defender.healthPoints.ReduceCurrentValue(totalDamage);
-             }
-             else
-             {
-                 totalDamage = 0;
-             }
-             Console.WriteLine($"{offender.name} attacked and hurt you with {totalDamage} damage");
-         }        
-
-        private void UseItem(Player player, Item item)
+        private void UseAbility(IAttributes offender, IAttributes defender)
         {
-            if (item.type == "Heal")
+            //Calculates crit
+            Random rnd = new Random();
+            double totalDamage;
+            if (rnd.NextDouble() <= offender.critChance.value)
             {
-                player.HealPlayer(item.value);
+                totalDamage = (offender.attackDamage.value * (1 + offender.critDamage.value)) - defender.defence.value;
+                Console.Write($"It's a critical hit! ");
             }
-            player.RemoveItem(item);
+            else
+            {
+                totalDamage = offender.attackDamage.value - defender.defence.value;
+            }
+
+            if (totalDamage >= 0)
+            {
+                defender.healthPoints.ReduceCurrentValue(totalDamage);
+            }
+            else
+            {
+                totalDamage = 0;
+            }
+            Console.WriteLine($"{offender.name} attacked and hurt {defender.name} with {totalDamage} damage");
         }
+
+
 
         private void ChooseConsumable(Player player)
         {
@@ -130,13 +123,13 @@ namespace OOP2
                     break;
 
                 case "2":
-
+                    player.UseConsumable(player.items.ElementAt(1));
                     break;
                 default:
                     break;
             }
         }
-        
+
         public void AddObserver(IMatchObserver observer)
         {
             observerCollection.Add(observer);
@@ -148,10 +141,10 @@ namespace OOP2
 
         public void NotifyObservers()
         {
-           foreach(var observer in observerCollection) 
-           {
+            foreach (var observer in observerCollection)
+            {
                 observer.UpdatePostMatch(this);
-           }
+            }
         }
     }
 }

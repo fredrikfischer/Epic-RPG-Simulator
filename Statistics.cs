@@ -8,19 +8,99 @@ using Newtonsoft.Json;
 namespace OOP2
 {
     public class Statistics : IMatchObserver
-    {   
-        
-        List<Match> matches;
+    {
 
-        public Statistics() 
+        List<Match> matches;
+        //delegate void SampleDelIn<in T>(T t); //Tar emot T som input, returnerar void
+        public delegate void ExportToFile<in T>(T t, string filename);
+
+
+        public Statistics()
         {
             matches = new List<Match>();
         }
 
         public void UpdatePostMatch(Match match)
         {
-            matches.Add(match);
-            ExportStatistics(matches);
+            /* SampleDelIn<Object> objectIn = (Object o) => Console.WriteLine("objectIn"); //Void
+            SampleDelIn<String> stringIn = objectIn;
+            stringIn(new String("a")); //Output: objectIn */
+
+            /* ExportToFile<Match> ExportMatch = async (Match m, string filename) =>
+            {
+                string json = JsonConvert.SerializeObject(m);
+                await File.AppendAllTextAsync(filename, json);
+            };
+
+             */
+
+            //ExportPlayer = ExportMatch;
+
+
+
+
+            /* IExport<Object> exportObject = new Export<Object>();
+            exportObject.ExportToFileInJson(match.enemy, "HistoryMatch.md");
+            exportObject.ExportToFileInJson(match.player, "HistoryMatch.md");
+            exportObject.ExportToFileInJson(DateTime.Now, "HistoryMatch.md");
+
+            IExport<Match> exportMatch = exportObject; */
+
+
+
+
+
+            /*
+            exportMatch = exportObject;
+            exportMatch.ExportToFileInJson(DateTime.Now, "HistoryMatch.md"); */
+
+
+
+            /* ExportToFile<Object> exportToFileObject = async (Object o, string filename) =>
+            {
+                string json = JsonConvert.SerializeObject(o);
+                await File.AppendAllTextAsync(filename, json);
+            };
+
+            ExportToFile<Player> exportPlayer = async (Player m, string filename) =>
+            {
+                string json = JsonConvert.SerializeObject(m);
+                await File.AppendAllTextAsync(filename, json);
+            };
+
+            exportPlayer = exportToFileObject;
+            exportPlayer(match.player, "HistoryMatch.md"); */
+
+
+
+            ExportToFile<IEnumerable<Item>> exportItem = async (IEnumerable<Item> i, string filename) =>
+            {
+                string json = JsonConvert.SerializeObject(i);
+                await File.AppendAllTextAsync(filename, json);
+            };
+
+            ExportToFile<IEnumerable<HealingSalve>> exportHealingSalve = async (IEnumerable<HealingSalve> h, string filename) =>
+            {
+                string json = JsonConvert.SerializeObject(h);
+                await File.AppendAllTextAsync(filename, json);
+            };
+
+            exportHealingSalve = exportItem;
+            exportHealingSalve(match.player.items.OfType<HealingSalve>(), "History.md");
+            //exportHealingSalve(match.player.items.OfType<Item>(), "History.md"); varför funkar inte?
+
+
+            
+
+
+
+            /* 
+                        matches.Add(match);
+                        IExport<List<Match>> exportMatchList = new Export<List<Match>>();
+                        exportMatchList.ExportToFileInJson(matches, "HistoryMatch.md");
+                        IExport<string> exportPlayer = new Export<string>();
+                        exportPlayer.ExportToFileInJson($"{match.player.classType.name} {match.player.classType.description}", "HistoryBonusType.md");
+                         */
         }
 
         private int GetTotalMatches()
@@ -42,7 +122,7 @@ namespace OOP2
             matches.Where(x => x.didWin).ToList().ForEach(x => total++);
             return total;
         }
-        
+
         private void UpdateMatchesPlayed()
         {
             int matchesPlayed = 0;
@@ -54,42 +134,39 @@ namespace OOP2
             PrintStat("Total wins:", GetTotalWins());
             PrintStat("Total rounds played:", GetTotalRounds());
             Console.ReadLine();
-           /*  foreach (var match in matches)
-            {
-                if(match.didWin)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    System.Console.WriteLine(match);
+            /*  foreach (var match in matches)
+             {
+                 if(match.didWin)
+                 {
+                     Console.ForegroundColor = ConsoleColor.Green;
+                     System.Console.WriteLine(match);
 
-                }
-                Console.ForegroundColor = ConsoleColor.White;
-                else
-                {
-                    System.Console.WriteLine(match);
-                }
-                
-            } */
+                 }
+                 Console.ForegroundColor = ConsoleColor.White;
+                 else
+                 {
+                     System.Console.WriteLine(match);
+                 }
+
+             } */
+
+
         }
 
         public void PrintStat<T>(string text, T input)
         {
-            Console.ForegroundColor = ConsoleColor.Red;  
-            Console.WriteLine($"{text} {input}");        
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{text} {input}");
             Console.ForegroundColor = ConsoleColor.White;
-            System.Console.WriteLine(GetStatistics()); 
+            //Console.WriteLine(ImportStatistics<T>("HistoryMatch.md")); 
         }
 
-        async void ExportStatistics<T>(T t)
+
+
+        /*public T ImportStatistics<T>(string file)
         {
-        string json = JsonConvert.SerializeObject(t);
-        await File.AppendAllTextAsync("History.md", json);
-        }
-        public T GetStatistics<out T>()
-        {
-            string textOutput = File.ReadAllText("History.md");
-            T t = JsonConvert.DeserializeObject<T>(textOutput);
-            return t;
-            
-        }
+            string inputJson = File.ReadAllText(file);
+            return JsonConvert.DeserializeAnonymousType(inputJson);
+        }*/
     }
 }

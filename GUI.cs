@@ -6,6 +6,23 @@ namespace OOP2 {
         public static void displayWelcome()
         {
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
+            System.Console.WriteLine(@"     
+                 ___====-_  _-====___
+           _--^^^#####//      \\#####^^^--_
+        _-^##########// (    ) \\##########^-_
+       -############//  |\^^/|  \\############-
+     _/############//   (@::@)   \\############\_
+    /#############((     \\//     ))#############\
+   -###############\\    (oo)    //###############-
+  -#################\\  / VV \  //#################-
+ -###################\\/      \//###################-
+_#/|##########/\######(   /\   )######/\##########|\#_
+|/ |#/\#/\#/\/  \#/\##\  |  |  /##/\#/  \/\#/\#/\#| \|
+`  |/  V  V  `   V  \#\| |  | |/#/  V   '  V  V  \|  '
+   `   `  `      `   / | |  | | \   '      '  '   '
+                    (  | |  | |  )
+                   __\ | |  | | /__
+                  (vvv(VVV)(VVV)vvv)");
             Console.ReadLine(); 
             Console.Clear();
         }
@@ -26,8 +43,8 @@ namespace OOP2 {
             Console.WriteLine("Welcome to the item shop /n/n here you can buy items to use in your fight");
             Console.WriteLine("Your balance is " + player.currentGold + " gold");
 
-            Console.WriteLine("1. Healing salve 50 gold");
-            Console.WriteLine("2. ");
+            Console.WriteLine("1. Healing salve     50 gold");
+            Console.WriteLine("2. Sword             50 gold");
             Console.WriteLine("3. ");
             Console.WriteLine("4. ");
             Console.WriteLine("5. ");

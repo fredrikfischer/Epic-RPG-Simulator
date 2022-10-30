@@ -18,10 +18,10 @@ namespace OOP2
 
                 case "1":
 
-                    AddItem(player, new Item("Healing Salve", 50, "Heal", 50));
+                    AddItem(player, new HealingSalve("Healing Salve", 50, 250));
                     break;
                 case "2":
-                    Console.Clear();
+                    AddItem(player, new Weapon("Sword", 50, 100));
                     break;
                 case "3":
                     Console.Clear();
@@ -48,7 +48,7 @@ namespace OOP2
             if (player.currentGold > item.cost)
             {
                 player.AddItem(item);
-                player.DeleteGold(50);
+                player.DeleteGold(item.cost);
             }
             else
             {

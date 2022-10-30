@@ -1,9 +1,9 @@
 using System;
 
 namespace OOP2 {
-    public class StarterChoises
+    public class StarterChoices
     { 
-        public static Player GetStarterChoises()
+        public static Player GetStarterChoices()
         {
             string playerName = ChoosePlayerName();
             

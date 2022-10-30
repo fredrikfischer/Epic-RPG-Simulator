@@ -57,9 +57,14 @@ namespace OOP2 {
 
         }
 
-        public void AddToCurrentHealth(int value)
+        public void AddToCurrentValue(int value)
         {
             currentValue += value;
+        }
+        public void AddToBaseValue(int valuee)
+        {
+            baseValue += valuee;
+            currentValue += valuee;
         }
 
     }

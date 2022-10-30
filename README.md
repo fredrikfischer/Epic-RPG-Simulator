@@ -16,3 +16,9 @@
 * observer pattern i game och match
 * generics covariant eller contravarient inte invariant, generic class 
 * statistik (in T1, out T2) spara, läsa in, skicka ut.
+
+* varianceide
+* PlayerStats ärver från Classtypestats. dom båda printar values från jsonfilen
+
+* göra att playerhealth inte kan vara under 0
+* göra så att man inte kan spela igen om hp är under 0

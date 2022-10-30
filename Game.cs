@@ -12,7 +12,7 @@ namespace OOP2
 
         public Game()
         {
-            this.player = StarterChoises.GetStarterChoises();
+            this.player = StarterChoices.GetStarterChoices();
             this.Statistics = new Statistics();
             this.itemShop = new ItemShop();
         }
