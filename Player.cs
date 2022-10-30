@@ -17,13 +17,13 @@ namespace OOP2
         public int currentGold { get; private set; }
         //public int currentXp {get; private set; }
         public List<Item> items { get; private set; }
+        public List<Item> usedItems { get; private set; }
 
         public Player(string playerName, IBonusType classType, IBonusType raceType)
         {
             this.name = playerName;
             this.classType = classType;
             this.raceType = raceType;
-            //this.attackDamage.Add(raceType.attackDamage);
 
             attackDamage = new Attribute(60);
             attackDamage.AddAttributeBonuses(classType.attackDamage);
@@ -48,6 +48,7 @@ namespace OOP2
             //currentGold = 0;
 
             items = new List<Item>();
+            usedItems = new List<Item>();
 
         }
 
@@ -70,7 +71,7 @@ namespace OOP2
             currentGold -= value;
         }
 
-        public void UseConsumable(Item item)
+        public void UseItem(Item item)
         {
             if (item is Consumable)
             {
@@ -87,6 +88,7 @@ namespace OOP2
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+            usedItems.Add(item);
         }
 
         public void UpdatePostMatch(Match match)
@@ -96,6 +98,9 @@ namespace OOP2
                 //Adds Gold
                 currentGold += match.enemy.bounty;
             }
+            healthPoints.ResetHealth(this);
+
         }
+        
     }
 }

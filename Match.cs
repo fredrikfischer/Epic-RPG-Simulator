@@ -21,7 +21,7 @@ namespace OOP2
             this.matchStart = DateTime.Now;
             this.roundsPlayed = 0;
             observerCollection = new List<IMatchObserver>();
-            Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold\n");
+            Console.WriteLine($"This fight is against {enemy.name}, /* {enemy.description}, */ If you win, this fight will earn you {enemy.bounty} gold\n");
             Console.ReadLine();
             Console.Clear();
         }
@@ -32,7 +32,7 @@ namespace OOP2
             {
                 roundsPlayed++;
                 Console.WriteLine($"Your hp: {player.healthPoints.currentValue}/{player.healthPoints.value}\n{enemy.name} hp: {enemy.healthPoints.currentValue}/{enemy.healthPoints.value}\n");
-                Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Consumables");
+                Console.WriteLine("Choose action\n1. Attack\n2. Run\n3. Items");
                 switch (Console.ReadLine())
                 {
                     case "1":
@@ -58,12 +58,12 @@ namespace OOP2
 
             if (player.healthPoints.currentValue < 0 && enemy.healthPoints.currentValue < 0)
             {
+                
                 Console.WriteLine("You both died in the fight RIP");
             }
             else if (player.healthPoints.currentValue > enemy.healthPoints.currentValue)
             {
-                //Console.Beep();
-                matchEnd = DateTime.Now;
+                //matchEnd = DateTime.Now;
                 Console.WriteLine("Congrats " + player.name + ", you won the fight!!");
                 didWin = true;
                 Console.ReadLine();
@@ -71,8 +71,10 @@ namespace OOP2
             }
             else
             {
+                //matchEnd = DateTime.Now;
                 Console.WriteLine("You lost against " + enemy.name + "!");
             }
+            matchEnd = DateTime.Now;
             Console.ReadLine();
             Console.Clear();
         }
@@ -119,11 +121,11 @@ namespace OOP2
             switch (input)
             {
                 case "1":
-                    player.UseConsumable(player.items.ElementAt(0));
+                    player.UseItem(player.items.ElementAt(0));
                     break;
 
                 case "2":
-                    player.UseConsumable(player.items.ElementAt(1));
+                    player.UseItem(player.items.ElementAt(1));
                     break;
                 default:
                     break;
@@ -137,6 +139,7 @@ namespace OOP2
 
         public void RemoveObserver()
         {
+
         }
 
         public void NotifyObservers()

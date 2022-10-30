@@ -7,13 +7,13 @@ namespace OOP2
     public class Game
     {
         Player player;
-        Statistics Statistics;
+        Statistics statistics;
         ItemShop itemShop;
 
         public Game()
         {
             this.player = StarterChoices.GetStarterChoices();
-            this.Statistics = new Statistics();
+            this.statistics = new Statistics();
             this.itemShop = new ItemShop();
         }
 
@@ -44,11 +44,11 @@ namespace OOP2
                         break;
                     case "3":
                         Console.Clear();
-                        Statistics.ShowStats();
+                        statistics.ShowMatchStats();
                         break;
                     case "4":
                         Console.Clear();
-                        Statistics.ExportStats(player);
+                        statistics.ExportStats(player);
                         break;
                     default:
                         Console.Clear();
@@ -103,7 +103,7 @@ namespace OOP2
         private void CreateMatch(int difficulty)
         {
             Match match = new Match(player, new Enemy(difficulty));
-            match.AddObserver(Statistics);
+            match.AddObserver(statistics);
             match.AddObserver(player);
             match.Round();
             match.NotifyObservers();

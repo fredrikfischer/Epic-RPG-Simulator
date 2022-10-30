@@ -22,30 +22,37 @@ namespace OOP2
         public void UpdatePostMatch(Match match)
         {
             matches.Add(match);
+            ExportMatches();
+            ExportItems(match);
+        }
 
+        private void ExportMatches()
+        {
             //Exports the list of matches to a file.
             ExportToFile<List<Match>> exportMatches = async (List<Match> i, string filename) =>
             {
                 string json = JsonConvert.SerializeObject(i);
                 await File.WriteAllTextAsync(filename, json);
             };
-            exportMatches(matches, "HistoryMatch.md");
-
-            //Exports equiped items to a file.
+            exportMatches(matches, "MatchesHistory.md");
+        }
+        private void ExportItems(Match match)
+        {
+            //Exports equipped items to a file.
             ExportToFile<IEnumerable<Item>> exportItem = async (IEnumerable<Item> i, string filename) =>
             {
                 string json = JsonConvert.SerializeObject(i);
                 await File.WriteAllTextAsync(filename, json);
             };
-            exportItem(match.player.items, "HistoryItems.md");
+            exportItem(match.player.usedItems, "ItemsHistory.md");
 
             //Exports equiped comsumables to a file.
             ExportToFile<IEnumerable<Consumable>> exportConsumable = exportItem;
-            exportConsumable(match.player.items.OfType<Consumable>(), "History.md");
+            exportConsumable(match.player.usedItems.OfType<Consumable>(), "ConsumableHistory.md");
 
             //Exports equiped weapons to a file.
             ExportToFile<IEnumerable<Weapon>> exportWeapon = exportItem;
-            exportWeapon(match.player.items.OfType<Weapon>(), "History.md");
+            exportWeapon(match.player.usedItems.OfType<Weapon>(), "WeaponHistory.md");
         }
 
         private int GetTotalMatches()
@@ -82,11 +89,11 @@ namespace OOP2
                     };
 
                 ExportToFile<IEnumerable<Weapon>> exportWeapon = exportItem;
-                exportWeapon(player.items.OfType<Weapon>(), "APIWeapons.md");
+                exportWeapon(player.usedItems.OfType<Weapon>(), "APIWeapons.md");
             }      
         }
         
-        public void ShowStats()
+        public void ShowMatchStats()
         {
             PrintStat($"Total matches played:", GetTotalMatches());
             PrintStat("Total wins:", GetTotalWins());

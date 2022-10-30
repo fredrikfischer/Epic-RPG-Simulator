@@ -6,7 +6,7 @@ namespace OOP2 {
         public static void displayWelcome()
         {
             Console.WriteLine("Welcome to Epic RPG simulator free download no ADS!!!");
-            System.Console.WriteLine(@"     
+            Console.WriteLine(@"     
                  ___====-_  _-====___
            _--^^^#####//      \\#####^^^--_
         _-^##########// (    ) \\##########^-_

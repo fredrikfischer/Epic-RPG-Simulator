@@ -19,9 +19,9 @@ namespace OOP2
 		public Enemy(int difficulty){
 
             name = GenerateName();
-            description = "";
             bounty = 80 * ((difficulty / 2) + 1);
             this.difficulty = difficulty;
+            description = "A spooky creature from Transylvania!";
 
 
             attackDamage = new Attribute(80 * ((difficulty / 2) + 1));
@@ -30,17 +30,8 @@ namespace OOP2
             critDamage = new Attribute(0.1);
             healthPoints = new Attribute(700 * ((difficulty / 2) + 1));
 
-			//name = "Spok";
-            //description = "Spok is a spooky creature from Transylvania!";
             
         
-            /* attackDamage = new Attribute(80);
-            defence = new Attribute(20);
-            critChance = new Attribute(0.1);
-            critDamage = new Attribute(0.1);
-            healthPoints = new Attribute(100); */
-
-
 		}
 
         private string GenerateName()
@@ -52,15 +43,5 @@ namespace OOP2
         }
 
 
-
-		/* Level level;
-
-
-
-		public Monster(Level level)
-		{
-			this.level = level;
-			
-		}*/
 	}
 }

@@ -1,1 +1,0 @@
-[{"damage":100,"name":"Sword","cost":0}]
