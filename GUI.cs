@@ -73,6 +73,7 @@ _#/|##########/\######(   /\   )######/\##########|\#_
             Console.WriteLine("1. Fight opponent");
             Console.WriteLine("2. Go to item shop");
             Console.WriteLine("3. See statistics");
+            Console.WriteLine("4. Share options");
         }
     }
 }

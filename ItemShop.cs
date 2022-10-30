@@ -18,7 +18,7 @@ namespace OOP2
 
                 case "1":
 
-                    AddItem(player, new HealingSalve("Healing Salve", 50, 250));
+                    AddItem(player, new Consumable("Healing Salve", 50, 250));
                     break;
                 case "2":
                     AddItem(player, new Weapon("Sword", 50, 100));
@@ -45,7 +45,7 @@ namespace OOP2
         }
         private void AddItem(Player player, Item item)
         {
-            if (player.currentGold > item.cost)
+            if (player.currentGold >= item.cost)
             {
                 player.AddItem(item);
                 player.DeleteGold(item.cost);

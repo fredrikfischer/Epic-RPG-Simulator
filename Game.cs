@@ -45,7 +45,10 @@ namespace OOP2
                     case "3":
                         Console.Clear();
                         Statistics.ShowStats();
-    
+                        break;
+                    case "4":
+                        Console.Clear();
+                        Statistics.ExportStats(player);
                         break;
                     default:
                         Console.Clear();

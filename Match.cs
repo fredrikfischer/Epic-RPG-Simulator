@@ -16,9 +16,9 @@ namespace OOP2
 
         public Match(Player player, Enemy enemy)
         {
-            matchStart = DateTime.Now;
             this.player = player;
             this.enemy = enemy;
+            this.matchStart = DateTime.Now;
             this.roundsPlayed = 0;
             observerCollection = new List<IMatchObserver>();
             Console.WriteLine($"This fight is against {enemy.name}, {enemy.description}, If you win, this fight will earn you {enemy.bounty} gold\n");

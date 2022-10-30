@@ -51,13 +51,6 @@ namespace OOP2
 
         }
 
-        /* public void UpdatePlayerHealth(Player player)
-        {
-            healthPoints = new Attribute(player.healthPoints.baseValue);
-            healthPoints.AddAttributeBonuses(player.classType.healthPoints);
-            healthPoints.AddAttributeBonuses(player.raceType.healthPoints);
-        } */
-
         public void AddItem(Item item)
         {
             items.Add(item);
@@ -79,9 +72,9 @@ namespace OOP2
 
         public void UseConsumable(Item item)
         {
-            if (item is HealingSalve)
+            if (item is Consumable)
             {
-                HealPlayer(((HealingSalve)item).healValue);
+                HealPlayer(((Consumable)item).healValue);
             }
             else if (item is Weapon)
             {

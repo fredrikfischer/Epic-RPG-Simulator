@@ -11,7 +11,6 @@ namespace OOP2
     {
 
         List<Match> matches;
-        //delegate void SampleDelIn<in T>(T t); //Tar emot T som input, returnerar void
         public delegate void ExportToFile<in T>(T t, string filename);
 
 
@@ -22,85 +21,31 @@ namespace OOP2
 
         public void UpdatePostMatch(Match match)
         {
-            /* SampleDelIn<Object> objectIn = (Object o) => Console.WriteLine("objectIn"); //Void
-            SampleDelIn<String> stringIn = objectIn;
-            stringIn(new String("a")); //Output: objectIn */
+            matches.Add(match);
 
-            /* ExportToFile<Match> ExportMatch = async (Match m, string filename) =>
+            //Exports the list of matches to a file.
+            ExportToFile<List<Match>> exportMatches = async (List<Match> i, string filename) =>
             {
-                string json = JsonConvert.SerializeObject(m);
-                await File.AppendAllTextAsync(filename, json);
+                string json = JsonConvert.SerializeObject(i);
+                await File.WriteAllTextAsync(filename, json);
             };
+            exportMatches(matches, "HistoryMatch.md");
 
-             */
-
-            //ExportPlayer = ExportMatch;
-
-
-
-
-            /* IExport<Object> exportObject = new Export<Object>();
-            exportObject.ExportToFileInJson(match.enemy, "HistoryMatch.md");
-            exportObject.ExportToFileInJson(match.player, "HistoryMatch.md");
-            exportObject.ExportToFileInJson(DateTime.Now, "HistoryMatch.md");
-
-            IExport<Match> exportMatch = exportObject; */
-
-
-
-
-
-            /*
-            exportMatch = exportObject;
-            exportMatch.ExportToFileInJson(DateTime.Now, "HistoryMatch.md"); */
-
-
-
-            /* ExportToFile<Object> exportToFileObject = async (Object o, string filename) =>
-            {
-                string json = JsonConvert.SerializeObject(o);
-                await File.AppendAllTextAsync(filename, json);
-            };
-
-            ExportToFile<Player> exportPlayer = async (Player m, string filename) =>
-            {
-                string json = JsonConvert.SerializeObject(m);
-                await File.AppendAllTextAsync(filename, json);
-            };
-
-            exportPlayer = exportToFileObject;
-            exportPlayer(match.player, "HistoryMatch.md"); */
-
-
-
+            //Exports equiped items to a file.
             ExportToFile<IEnumerable<Item>> exportItem = async (IEnumerable<Item> i, string filename) =>
             {
                 string json = JsonConvert.SerializeObject(i);
-                await File.AppendAllTextAsync(filename, json);
+                await File.WriteAllTextAsync(filename, json);
             };
+            exportItem(match.player.items, "HistoryItems.md");
 
-            ExportToFile<IEnumerable<HealingSalve>> exportHealingSalve = async (IEnumerable<HealingSalve> h, string filename) =>
-            {
-                string json = JsonConvert.SerializeObject(h);
-                await File.AppendAllTextAsync(filename, json);
-            };
+            //Exports equiped comsumables to a file.
+            ExportToFile<IEnumerable<Consumable>> exportConsumable = exportItem;
+            exportConsumable(match.player.items.OfType<Consumable>(), "History.md");
 
-            exportHealingSalve = exportItem;
-            exportHealingSalve(match.player.items.OfType<HealingSalve>(), "History.md");
-            //exportHealingSalve(match.player.items.OfType<Item>(), "History.md"); varför funkar inte?
-
-
-            
-
-
-
-            /* 
-                        matches.Add(match);
-                        IExport<List<Match>> exportMatchList = new Export<List<Match>>();
-                        exportMatchList.ExportToFileInJson(matches, "HistoryMatch.md");
-                        IExport<string> exportPlayer = new Export<string>();
-                        exportPlayer.ExportToFileInJson($"{match.player.classType.name} {match.player.classType.description}", "HistoryBonusType.md");
-                         */
+            //Exports equiped weapons to a file.
+            ExportToFile<IEnumerable<Weapon>> exportWeapon = exportItem;
+            exportWeapon(match.player.items.OfType<Weapon>(), "History.md");
         }
 
         private int GetTotalMatches()
@@ -123,50 +68,34 @@ namespace OOP2
             return total;
         }
 
-        private void UpdateMatchesPlayed()
+        public void ExportStats(Player player)
         {
-            int matchesPlayed = 0;
-            matches.ForEach(x => matchesPlayed++);
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1. Share your weapons with the world!");
+
+            if (Console.ReadLine() == "1")
+            {
+                ExportToFile<IEnumerable<Item>> exportItem = async (IEnumerable<Item> i, string filename) =>
+                    {
+                        string json = JsonConvert.SerializeObject(i);
+                        await File.WriteAllTextAsync(filename, json);
+                    };
+
+                ExportToFile<IEnumerable<Weapon>> exportWeapon = exportItem;
+                exportWeapon(player.items.OfType<Weapon>(), "APIWeapons.md");
+            }      
         }
+        
         public void ShowStats()
         {
             PrintStat($"Total matches played:", GetTotalMatches());
             PrintStat("Total wins:", GetTotalWins());
             PrintStat("Total rounds played:", GetTotalRounds());
             Console.ReadLine();
-            /*  foreach (var match in matches)
-             {
-                 if(match.didWin)
-                 {
-                     Console.ForegroundColor = ConsoleColor.Green;
-                     System.Console.WriteLine(match);
-
-                 }
-                 Console.ForegroundColor = ConsoleColor.White;
-                 else
-                 {
-                     System.Console.WriteLine(match);
-                 }
-
-             } */
-
-
         }
-
         public void PrintStat<T>(string text, T input)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{text} {input}");
-            Console.ForegroundColor = ConsoleColor.White;
-            //Console.WriteLine(ImportStatistics<T>("HistoryMatch.md")); 
         }
-
-
-
-        /*public T ImportStatistics<T>(string file)
-        {
-            string inputJson = File.ReadAllText(file);
-            return JsonConvert.DeserializeAnonymousType(inputJson);
-        }*/
     }
 }
