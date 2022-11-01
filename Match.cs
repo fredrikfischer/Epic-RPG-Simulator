@@ -137,9 +137,9 @@ namespace OOP2
             observerCollection.Add(observer);
         }
 
-        public void RemoveObserver()
+        public void RemoveObserver(IMatchObserver observer)
         {
-
+            observerCollection.Remove(observer);
         }
 
         public void NotifyObservers()
