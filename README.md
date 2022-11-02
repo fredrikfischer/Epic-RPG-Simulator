@@ -6,7 +6,7 @@ Detta borjade som en koduppgift på kursen Objektorienterad Programmering 2.
 
 Tekniker som används i detta projekt innefattar: 
 - Subtypspolymorfism
-- Injicerad objektkomposition
+- Abstrakkt injicerad objektkomposition
 - Egna definierad “generisk datatyp"
 - "Varians" i kontexten "generics"
 - Pattern matching
