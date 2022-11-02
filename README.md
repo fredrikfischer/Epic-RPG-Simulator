@@ -1,24 +1,13 @@
-# OOP2_projekt
+#Epic RPG Simulator
+Ett rundbaserat RPG spel. Spelaren får välja egenskaper i form av "class" och "race" vilka ger olika typer av fördelar. Spelaren möter olika motsåndare/monster i fighter, där målet är att döda motståndare, införskaffa items och förbättra sin karaktär.
 
-//todo
-* injecta kanske in attributes i player när man skapar player?
-* Round() är fett buggad, den kör if satsen 3 gånger ingen aning om varför
-* ta bort defence eftersom den är exakt som HP
-* generara namn baserat på difficulty?
-* göra så många medlemmar privata som möjligt
-* ta bort static från alla metoder som inte behöver det
-* behöver man kanske ha två spelare?
-* fixa för när man förlorar en round
-* uppdatera klassmedlemmar istället för att skapa nya, annars göra if kontroll
-* göra felhantering
-* kunna navigera med piltangenterna
-* composite pattern med items / abilitys?
-* observer pattern i game och match
-* generics covariant eller contravarient inte invariant, generic class 
-* statistik (in T1, out T2) spara, läsa in, skicka ut.
+Detta borjade som en koduppgift på kursen Objektorienterad Programmering 2. 
 
-* varianceide
-* PlayerStats ärver från Classtypestats. dom båda printar values från jsonfilen
-
-* göra att playerhealth inte kan vara under 0
-* göra så att man inte kan spela igen om hp är under 0
+Tekniker som används i detta projekt innefattar: 
+- Subtypspolymorfism
+- Injicerad objektkomposition
+- Egna definierad “generisk datatyp"
+- "Varians" i kontexten "generics"
+- Pattern matching
+- Lambda expressions” i “LINQ
+- Observer Pattern
