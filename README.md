@@ -9,7 +9,7 @@ Detta program innefattar:
 - Spelaren möter olika generade motsåndare/monster i dueller. 
 - Spelets mål är att döda motståndare, införskaffa items och förbättra sin karaktär.
 - Se statistik om dina prestationer i spelet.
-- Spara matchhistorik och annan info i externa files för senare beskådan.
+- Spara matchhistorik och annan info i externa filer för senare beskådan.
 
 Tekniker som används i detta projekt innefattar: 
 - Subtypspolymorfism
