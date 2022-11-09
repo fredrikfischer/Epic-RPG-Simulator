@@ -1,6 +1,6 @@
 # Epic RPG Simulator
 
-Detta borjade som en koduppgift på kursen Objektorienterad Programmering 2. 
+Detta började som en koduppgift på kursen Objektorienterad Programmering 2. 
 
 Detta program innefattar: 
 
